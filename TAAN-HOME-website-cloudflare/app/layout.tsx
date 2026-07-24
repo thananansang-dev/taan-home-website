@@ -33,10 +33,6 @@ export const metadata: Metadata = {
   other: {
     "codex-preview": "development",
   },
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
 };
 
 export default function RootLayout({
