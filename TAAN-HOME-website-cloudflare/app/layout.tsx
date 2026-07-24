@@ -14,9 +14,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://taanhome.com"),
   title: "TAAN HOME | Modern Luxury Furniture",
   description:
     "Discover modern luxury furniture for considered living. Visit the TAAN HOME showroom in Bangkok.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "TAAN HOME | Modern Luxury Furniture",
+    description:
+      "Discover modern luxury furniture for considered living. Visit the TAAN HOME showroom in Bangkok.",
+    url: "/",
+    siteName: "TAAN HOME",
+    type: "website",
+    images: [{ url: "/images/taan-hero.webp", alt: "TAAN HOME modern luxury furniture" }],
+  },
   other: {
     "codex-preview": "development",
   },
