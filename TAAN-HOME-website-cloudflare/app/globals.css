@@ -361,6 +361,65 @@ h1 {
 .book-controls p { color: rgba(25,24,21,.55); margin: 0; }
 .catalogue-download { display: flex; margin: 34px auto 0; width: max-content; }
 
+.standalone-catalogue {
+  background: #d9d0c7;
+  min-height: 100vh;
+}
+
+.catalogue-page-header {
+  align-items: center;
+  border-bottom: 1px solid rgba(25,24,21,.16);
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  padding: 27px 4.4vw 24px;
+}
+
+.catalogue-page-intro {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 84px 0 58px;
+}
+
+.catalogue-page-intro > div {
+  align-items: end;
+  display: grid;
+  gap: 7vw;
+  grid-template-columns: minmax(0, 1fr) 390px;
+}
+
+.catalogue-page-intro h1 {
+  color: var(--ink);
+  font-size: clamp(60px, 7vw, 104px);
+  line-height: .88;
+  max-width: 900px;
+}
+
+.catalogue-page-intro > div > p {
+  color: rgba(25,24,21,.66);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 8px;
+}
+
+.catalogue-page-book {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 5vw 100px;
+}
+
+.catalogue-page-actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 38px auto 0;
+  max-width: 1280px;
+}
+
+.catalogue-page-footer {
+  background: var(--ink);
+}
+
 .book-overlay {
   align-items: center;
   background: rgba(18,17,15,.97);
@@ -475,6 +534,13 @@ footer p:last-child { justify-self: end; }
   .book-controls button { font-size: 8px; }
   .book-controls p { font-size: 8px; }
   .book-spread::after { width: 10px; }
+  .catalogue-page-header { padding: 22px; }
+  .catalogue-page-intro { padding: 68px 22px 42px; }
+  .catalogue-page-intro > div { align-items: start; gap: 28px; grid-template-columns: 1fr; }
+  .catalogue-page-intro h1 { font-size: clamp(52px, 14vw, 78px); }
+  .catalogue-page-intro > div > p { max-width: 560px; }
+  .catalogue-page-book { padding: 0 22px 80px; }
+  .catalogue-page-actions { align-items: flex-start; flex-direction: column-reverse; gap: 30px; }
   .showroom-buttons { align-items: flex-start; flex-direction: column; gap: 22px; }
   .approach { gap: 70px; }
   .showroom { gap: 54px; }
