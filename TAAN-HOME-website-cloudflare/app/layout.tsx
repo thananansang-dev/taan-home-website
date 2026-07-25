@@ -47,6 +47,11 @@ export default function RootLayout({
       >
         {children}
         <MetaPixel />
+        <script
+        type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token":"d66596f79985435b91c84d7e8ed31a87"}'
+        ></script>
       </body>
     </html>
   );
