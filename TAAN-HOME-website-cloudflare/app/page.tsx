@@ -70,12 +70,12 @@ export default function Home() {
 
         <div className="collection-grid collection-grid-four">
           <article className="collection-card">
-            <a className="collection-link" href="/collections/dining-table-chair" data-meta-event="ViewContent" data-meta-content="Dining & Chair Collection" data-meta-category="Collection">
+            <a className="collection-link" href="/collections/dining-table-chair" data-meta-event="ViewContent" data-meta-content="Dining table & Chair Collection" data-meta-category="Collection">
               <div className="image-wrap">
                 <img src="/images/collection-dining.webp" alt="TAAN HOME dining table and chairs" />
               </div>
               <div className="card-meta">
-                <div><span>01</span><h3>Dining &amp; Chair</h3></div>
+                <div><span>01</span><h3>Dining table &amp; Chair</h3></div>
                 <span className="card-arrow" aria-hidden="true"><Arrow /></span>
               </div>
             </a>
