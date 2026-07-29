@@ -68,38 +68,50 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="collection-grid">
-          <article className="collection-card card-wide">
-            <a className="collection-link" href="/collections/dining-table-chair" data-meta-event="ViewContent" data-meta-content="Dining Table & Chair Collection" data-meta-category="Collection">
+        <div className="collection-grid collection-grid-four">
+          <article className="collection-card">
+            <a className="collection-link" href="/collections/dining-table-chair" data-meta-event="ViewContent" data-meta-content="Dining & Chair Collection" data-meta-category="Collection">
               <div className="image-wrap">
-                <img src="/images/taan-dining.webp" alt="TAAN HOME Zenith Quad dining table with upholstered chairs" />
+                <img src="/images/collection-dining.png" alt="TAAN HOME dining table and chairs" />
               </div>
               <div className="card-meta">
-                <div><span>01</span><h3>Dining</h3></div>
+                <div><span>01</span><h3>Dining &amp; Chair</h3></div>
                 <span className="card-arrow" aria-hidden="true"><Arrow /></span>
               </div>
             </a>
           </article>
 
-          <article className="collection-card card-tall">
-            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Seating catalogue" data-meta-category="Catalogue">
+          <article className="collection-card">
+            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Sofa Collection" data-meta-category="Collection">
               <div className="image-wrap">
-                <img src="/images/taan-seating.webp" alt="TAAN HOME patterned green lounge chair" />
+                <img src="/images/collection-sofa.png" alt="TAAN HOME Kyr sofa" />
               </div>
               <div className="card-meta">
-                <div><span>02</span><h3>Seating</h3></div>
+                <div><span>02</span><h3>Sofa</h3></div>
                 <span className="card-arrow" aria-hidden="true"><Arrow /></span>
               </div>
             </a>
           </article>
 
-          <article className="collection-card card-tall card-living">
-            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Living catalogue" data-meta-category="Catalogue">
+          <article className="collection-card">
+            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Lounge Chair Collection" data-meta-category="Collection">
               <div className="image-wrap">
-                <img src="/images/taan-living.webp" alt="TAAN HOME modular sofa, stone coffee table and lounge chair" />
+                <img src="/images/collection-lounge-chair.png" alt="TAAN HOME Grid lounge chair" />
               </div>
               <div className="card-meta">
-                <div><span>03</span><h3>Living</h3></div>
+                <div><span>03</span><h3>Lounge Chair</h3></div>
+                <span className="card-arrow" aria-hidden="true"><Arrow /></span>
+              </div>
+            </a>
+          </article>
+
+          <article className="collection-card">
+            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Coffee Table Collection" data-meta-category="Collection">
+              <div className="image-wrap">
+                <img src="/images/collection-coffee-table.png" alt="TAAN HOME sculptural stone coffee table" />
+              </div>
+              <div className="card-meta">
+                <div><span>04</span><h3>Coffee Table</h3></div>
                 <span className="card-arrow" aria-hidden="true"><Arrow /></span>
               </div>
             </a>

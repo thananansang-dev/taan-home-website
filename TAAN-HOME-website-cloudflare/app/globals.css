@@ -724,3 +724,33 @@ footer p:last-child { justify-self: end; }
   .dining-catalogue-heading { align-items: start; gap: 28px; grid-template-columns: 1fr; margin-bottom: 45px; }
   .dining-catalogue-actions { align-items: flex-start; flex-direction: column-reverse; gap: 30px; }
 }
+
+
+/* Four-category collection grid */
+.collection-grid-four {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.collection-grid-four .collection-card {
+  grid-row: auto;
+}
+.collection-grid-four .image-wrap {
+  aspect-ratio: 4 / 3;
+}
+.collection-grid-four .image-wrap img {
+  object-position: center;
+}
+.collection-grid-four .collection-card:nth-child(2) .image-wrap img {
+  object-position: center 62%;
+}
+.collection-grid-four .collection-card:nth-child(3) .image-wrap img {
+  object-position: center 45%;
+}
+.collection-grid-four .card-meta h3 {
+  font-size: clamp(25px, 2.2vw, 34px);
+}
+
+@media (max-width: 900px) {
+  .collection-grid-four {
+    grid-template-columns: 1fr;
+  }
+}
