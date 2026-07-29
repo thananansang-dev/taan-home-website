@@ -72,7 +72,7 @@ export default function Home() {
           <article className="collection-card">
             <a className="collection-link" href="/collections/dining-table-chair" data-meta-event="ViewContent" data-meta-content="Dining & Chair Collection" data-meta-category="Collection">
               <div className="image-wrap">
-                <img src="/images/collection-dining.png" alt="TAAN HOME dining table and chairs" />
+                <img src="/images/collection-dining.webp" alt="TAAN HOME dining table and chairs" />
               </div>
               <div className="card-meta">
                 <div><span>01</span><h3>Dining &amp; Chair</h3></div>
@@ -84,7 +84,7 @@ export default function Home() {
           <article className="collection-card">
             <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Sofa Collection" data-meta-category="Collection">
               <div className="image-wrap">
-                <img src="/images/collection-sofa.png" alt="TAAN HOME Kyr sofa" />
+                <img src="/images/collection-sofa.webp" alt="TAAN HOME Kyr sofa" />
               </div>
               <div className="card-meta">
                 <div><span>02</span><h3>Sofa</h3></div>
@@ -96,7 +96,7 @@ export default function Home() {
           <article className="collection-card">
             <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Lounge Chair Collection" data-meta-category="Collection">
               <div className="image-wrap">
-                <img src="/images/collection-lounge-chair.png" alt="TAAN HOME Grid lounge chair" />
+                <img src="/images/collection-lounge-chair.webp" alt="TAAN HOME Grid lounge chair" />
               </div>
               <div className="card-meta">
                 <div><span>03</span><h3>Lounge Chair</h3></div>
@@ -108,7 +108,7 @@ export default function Home() {
           <article className="collection-card">
             <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Coffee Table Collection" data-meta-category="Collection">
               <div className="image-wrap">
-                <img src="/images/collection-coffee-table.png" alt="TAAN HOME sculptural stone coffee table" />
+                <img src="/images/collection-coffee-table.webp" alt="TAAN HOME sculptural stone coffee table" />
               </div>
               <div className="card-meta">
                 <div><span>04</span><h3>Coffee Table</h3></div>
