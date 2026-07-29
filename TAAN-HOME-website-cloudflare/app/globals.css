@@ -684,6 +684,28 @@ footer p:last-child { justify-self: end; }
 .sofa-note h2 em { color: #8f705c; }
 .sofa-catalogue { background: #d6ccc2; }
 
+/* Coffee table collection */
+.coffee-collection-page { background: #f0ede8; }
+.coffee-hero {
+  background: #35312e;
+  min-height: 100vh;
+  padding-right: 61vw;
+}
+.coffee-hero > img {
+  height: 100%;
+  left: auto;
+  object-fit: cover;
+  object-position: center;
+  right: 0;
+  width: 60vw;
+}
+.coffee-hero .dining-hero-shade {
+  background: linear-gradient(90deg, rgba(31,28,26,.98) 0%, rgba(31,28,26,.9) 40%, rgba(31,28,26,.2) 70%, rgba(31,28,26,.06) 100%);
+}
+.coffee-feature-verve .dining-feature-image img { object-position: center; }
+.coffee-note h2 em { color: #786c62; }
+.coffee-catalogue { background: #d2cbc3; }
+
 @media (max-width: 900px) {
   .collection-page-header { grid-template-columns: 1fr auto; padding: 24px 22px; }
   .collection-page-header nav { display: none; }
@@ -707,6 +729,11 @@ footer p:last-child { justify-self: end; }
     background: linear-gradient(90deg, rgba(12,10,9,.72), rgba(12,10,9,.2) 82%), linear-gradient(0deg, rgba(8,7,6,.72), transparent 65%);
   }
   .sofa-feature-kyr .dining-feature-image img { object-position: center 68%; }
+  .coffee-hero { min-height: 88vh; padding-right: 24px; }
+  .coffee-hero > img { left: 0; object-position: center; width: 100%; }
+  .coffee-hero .dining-hero-shade {
+    background: linear-gradient(90deg, rgba(15,13,12,.72), rgba(15,13,12,.12) 85%), linear-gradient(0deg, rgba(10,9,8,.76), transparent 68%);
+  }
 }
 
 

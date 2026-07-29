@@ -106,7 +106,7 @@ export default function Home() {
           </article>
 
           <article className="collection-card">
-            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Coffee Table Collection" data-meta-category="Collection">
+            <a className="collection-link" href="/collections/coffee-table" data-meta-event="ViewContent" data-meta-content="Coffee Table Collection" data-meta-category="Collection">
               <div className="image-wrap">
                 <img src="/images/collection-coffee-table.webp" alt="TAAN HOME sculptural stone coffee table" />
               </div>
