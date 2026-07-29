@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CatalogueBook from "../../CatalogueBook";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const cataloguePdfUrl = "/catalogue/taan-home-collection-2026.pdf";
+const cataloguePdfUrl = "/catalogue/dining/taan-dining-table-chair.pdf";
 
 export const metadata: Metadata = {
   title: "Dining Table & Chair Collection | TAAN HOME",
@@ -94,9 +94,13 @@ export default function DiningCollectionPage() {
           <div><p className="eyebrow">TAAN Collection 2026</p><h2>Discover the<br />full collection.</h2></div>
           <p>Browse the complete TAAN HOME catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
-        <CatalogueBook />
+        <CatalogueBook
+          catalogueName="TAAN Dining Table & Chair"
+          pageCount={71}
+          pageDirectory="/catalogue/dining/pages"
+        />
         <div className="dining-catalogue-actions">
-          <a className="text-link dark-link" href={cataloguePdfUrl} download="TAAN-HOME-Collection-2026.pdf">Download catalogue PDF</a>
+          <a className="text-link dark-link" href={cataloguePdfUrl} download="TAAN-Dining-Table-and-Chair.pdf">Download catalogue PDF</a>
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
       </section>

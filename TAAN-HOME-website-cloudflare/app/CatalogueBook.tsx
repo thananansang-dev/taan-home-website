@@ -2,18 +2,25 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const pageCount = 71;
+type CatalogueBookProps = {
+  catalogueName?: string;
+  pageCount?: number;
+  pageDirectory?: string;
+};
 
-const pagePath = (page: number) =>
-  `/catalogue/pages/page-${String(page).padStart(2, "0")}.webp`;
-
-export default function CatalogueBook() {
+export default function CatalogueBook({
+  catalogueName = "TAAN Collection 2026",
+  pageCount = 32,
+  pageDirectory = "/catalogue/pages",
+}: CatalogueBookProps) {
   const [spread, setSpread] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const touchStart = useRef<number | null>(null);
   const maxSpread = Math.ceil((pageCount - 1) / 2);
   const leftPage = spread === 0 ? null : spread * 2;
   const rightPage = spread === 0 ? 1 : spread * 2 + 1;
+  const pagePath = (page: number) =>
+    `${pageDirectory}/page-${String(page).padStart(2, "0")}.webp`;
 
   const previous = () => setSpread((value) => Math.max(0, value - 1));
   const next = () => setSpread((value) => Math.min(maxSpread, value + 1));
@@ -63,7 +70,7 @@ export default function CatalogueBook() {
         tabIndex={openOnClick ? 0 : undefined}
         aria-label={openOnClick ? "Open catalogue full screen" : undefined}
         data-meta-event={openOnClick ? "ViewContent" : undefined}
-        data-meta-content={openOnClick ? "TAAN Collection 2026 full screen" : undefined}
+        data-meta-content={openOnClick ? `${catalogueName} full screen` : undefined}
         data-meta-category={openOnClick ? "Catalogue" : undefined}
       >
         <figure className={`book-page left-page${leftPage ? "" : " blank-page"}`}>
@@ -97,7 +104,7 @@ export default function CatalogueBook() {
       <div className="catalogue-viewer">
         <div className="viewer-topline">
           <p>Click the catalogue for full screen · use arrows or swipe to turn pages</p>
-          <button type="button" className="expand-book" onClick={() => setExpanded(true)} data-meta-event="ViewContent" data-meta-content="TAAN Collection 2026 full screen" data-meta-category="Catalogue">
+          <button type="button" className="expand-book" onClick={() => setExpanded(true)} data-meta-event="ViewContent" data-meta-content={`${catalogueName} full screen`} data-meta-category="Catalogue">
             Open full screen
           </button>
         </div>
@@ -105,7 +112,7 @@ export default function CatalogueBook() {
       </div>
 
       {expanded && (
-        <div className="book-overlay" role="dialog" aria-modal="true" aria-label="TAAN catalogue full screen viewer">
+        <div className="book-overlay" role="dialog" aria-modal="true" aria-label={`${catalogueName} full screen viewer`}>
           <button type="button" className="close-book" onClick={() => setExpanded(false)} aria-label="Close full screen catalogue">
             Close ×
           </button>
