@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const pixelId = "1084027037571279";
 const consentKey = "taan_meta_marketing_consent";
@@ -19,7 +19,12 @@ declare global {
 }
 
 type TrackingEvent = {
-  name: "PageView" | "ViewContent" | "Contact" | "ShowroomDirections";
+  name:
+    | "PageView"
+    | "ViewContent"
+    | "Contact"
+    | "ShowroomDirections"
+    | "DownloadCatalogue";
   params?: Record<string, string>;
 };
 
@@ -45,8 +50,39 @@ function sendServerEvent(event: TrackingEvent, eventId: string) {
 
 function track(event: TrackingEvent) {
   const eventId = createEventId();
-  window.fbq?.("track", event.name, event.params ?? {}, { eventID: eventId });
+  const method = event.name === "DownloadCatalogue" ? "trackCustom" : "track";
+  window.fbq?.(method, event.name, event.params ?? {}, { eventID: eventId });
   sendServerEvent(event, eventId);
+}
+
+function collectionName(pathname: string) {
+  const slug = pathname.match(/^\/collections\/([^/]+)\/?$/)?.[1];
+  if (!slug) return null;
+
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function isLineLink(anchor: HTMLAnchorElement) {
+  try {
+    return new URL(anchor.href, window.location.href).hostname === "lin.ee";
+  } catch {
+    return false;
+  }
+}
+
+function isCatalogueDownload(anchor: HTMLAnchorElement) {
+  try {
+    const url = new URL(anchor.href, window.location.href);
+    return anchor.hasAttribute("download")
+      && url.origin === window.location.origin
+      && url.pathname.startsWith("/catalogue/")
+      && url.pathname.endsWith(".pdf");
+  } catch {
+    return false;
+  }
 }
 
 function loadPixel() {
@@ -76,30 +112,66 @@ function loadPixel() {
 
 export default function MetaPixel() {
   const [consent, setConsent] = useState<"accepted" | "declined" | null>(null);
+  const trackedCollection = useRef<string | null>(null);
 
   useEffect(() => {
     const saved = window.localStorage.getItem(consentKey);
-    if (saved === "accepted" || saved === "declined") setConsent(saved);
+    if (saved === "accepted" || saved === "declined") {
+      queueMicrotask(() => setConsent(saved));
+    }
     if (saved === "accepted") loadPixel();
   }, []);
 
   useEffect(() => {
     if (consent !== "accepted") return;
 
-    const onClick = (event: MouseEvent) => {
-      const target = event.target instanceof Element
-        ? event.target.closest<HTMLElement>("[data-meta-event]")
-        : null;
-      if (!target) return;
+    const currentCollection = collectionName(window.location.pathname);
+    if (currentCollection && trackedCollection.current !== window.location.pathname) {
+      trackedCollection.current = window.location.pathname;
+      track({
+        name: "ViewContent",
+        params: {
+          content_name: `${currentCollection} Collection`,
+          content_category: "Collection",
+          content_type: "product_group",
+        },
+      });
+    }
 
-      const name = target.dataset.metaEvent as TrackingEvent["name"] | undefined;
+    const onClick = (event: MouseEvent) => {
+      if (!(event.target instanceof Element)) return;
+
+      const target = event.target.closest<HTMLElement>("[data-meta-event]");
+      const anchor = event.target.closest<HTMLAnchorElement>("a[href]");
+      let name = target?.dataset.metaEvent as TrackingEvent["name"] | undefined;
+
+      if (!name && anchor && isLineLink(anchor)) name = "Contact";
+      if (!name && anchor && isCatalogueDownload(anchor)) name = "DownloadCatalogue";
       if (!name) return;
+
+      // Collection cards used to emit ViewContent on click. The destination page
+      // now emits it on view, so skip the old click event to avoid double counting.
+      if (
+        name === "ViewContent"
+        && anchor
+        && new URL(anchor.href, window.location.href).pathname.startsWith("/collections/")
+      ) return;
 
       track({
         name,
         params: {
-          content_name: target.dataset.metaContent ?? document.title,
-          content_category: target.dataset.metaCategory ?? "Website",
+          content_name:
+            target?.dataset.metaContent
+            ?? anchor?.getAttribute("download")
+            ?? anchor?.textContent?.trim()
+            ?? document.title,
+          content_category:
+            target?.dataset.metaCategory
+            ?? (name === "Contact"
+              ? "LINE enquiry"
+              : name === "DownloadCatalogue"
+                ? "Catalogue"
+                : "Website"),
         },
       });
     };
