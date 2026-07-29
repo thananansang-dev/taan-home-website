@@ -94,7 +94,7 @@ export default function Home() {
           </article>
 
           <article className="collection-card">
-            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Lounge Chair Collection" data-meta-category="Collection">
+            <a className="collection-link" href="/collections/lounge-chair" data-meta-event="ViewContent" data-meta-content="Lounge Chair Collection" data-meta-category="Collection">
               <div className="image-wrap">
                 <img src="/images/collection-lounge-chair.webp" alt="TAAN HOME Grid lounge chair" />
               </div>

@@ -706,6 +706,28 @@ footer p:last-child { justify-self: end; }
 .coffee-note h2 em { color: #786c62; }
 .coffee-catalogue { background: #d2cbc3; }
 
+/* Lounge chair collection */
+.lounge-collection-page { background: #efede8; }
+.lounge-hero {
+  background: #373431;
+  min-height: 100vh;
+  padding-right: 59vw;
+}
+.lounge-hero > img {
+  height: 100%;
+  left: auto;
+  object-fit: cover;
+  object-position: center;
+  right: 0;
+  width: 58vw;
+}
+.lounge-hero .dining-hero-shade {
+  background: linear-gradient(90deg, rgba(31,29,27,.98) 0%, rgba(31,29,27,.9) 41%, rgba(31,29,27,.18) 72%, rgba(31,29,27,.04) 100%);
+}
+.lounge-feature-teddy .dining-feature-image img { object-position: center; }
+.lounge-note h2 em { color: #81756d; }
+.lounge-catalogue { background: #d8d1ca; }
+
 @media (max-width: 900px) {
   .collection-page-header { grid-template-columns: 1fr auto; padding: 24px 22px; }
   .collection-page-header nav { display: none; }
@@ -733,6 +755,11 @@ footer p:last-child { justify-self: end; }
   .coffee-hero > img { left: 0; object-position: center; width: 100%; }
   .coffee-hero .dining-hero-shade {
     background: linear-gradient(90deg, rgba(15,13,12,.72), rgba(15,13,12,.12) 85%), linear-gradient(0deg, rgba(10,9,8,.76), transparent 68%);
+  }
+  .lounge-hero { min-height: 88vh; padding-right: 24px; }
+  .lounge-hero > img { left: 0; object-position: center; width: 100%; }
+  .lounge-hero .dining-hero-shade {
+    background: linear-gradient(90deg, rgba(13,12,11,.72), rgba(13,12,11,.12) 85%), linear-gradient(0deg, rgba(9,8,7,.76), transparent 68%);
   }
 }
 
