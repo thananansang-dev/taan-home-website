@@ -342,8 +342,18 @@ h1 {
   z-index: 2;
 }
 
-.book-page { aspect-ratio: 1.414 / 1; margin: 0; overflow: hidden; }
-.book-page img { height: 100%; object-fit: cover; }
+.book-page {
+  aspect-ratio: 1.414 / 1;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.book-page img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
 .blank-page { background: #f4f1ed; }
 .left-page { box-shadow: inset -8px 0 16px rgba(35,22,18,.08); }
 .right-page { box-shadow: inset 8px 0 16px rgba(35,22,18,.08); }
