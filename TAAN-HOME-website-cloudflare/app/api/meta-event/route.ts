@@ -4,6 +4,7 @@ const allowedEvents = new Set([
   "ViewContent",
   "Contact",
   "ShowroomDirections",
+  "DownloadCatalogue",
 ]);
 
 type EventBody = {
