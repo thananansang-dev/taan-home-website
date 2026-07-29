@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const pageCount = 32;
+const pageCount = 71;
 
 const pagePath = (page: number) =>
   `/catalogue/pages/page-${String(page).padStart(2, "0")}.webp`;
