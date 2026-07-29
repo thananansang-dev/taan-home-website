@@ -70,7 +70,7 @@ export default function Home() {
 
         <div className="collection-grid">
           <article className="collection-card card-wide">
-            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Dining catalogue" data-meta-category="Catalogue">
+            <a className="collection-link" href="/collections/dining-table-chair" data-meta-event="ViewContent" data-meta-content="Dining Table & Chair Collection" data-meta-category="Collection">
               <div className="image-wrap">
                 <img src="/images/taan-dining.webp" alt="TAAN HOME Zenith Quad dining table with upholstered chairs" />
               </div>
