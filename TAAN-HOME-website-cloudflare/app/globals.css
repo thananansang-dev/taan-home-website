@@ -661,6 +661,29 @@ footer p:last-child { justify-self: end; }
 .dining-catalogue-heading > p { color: rgba(25,24,21,.66); font-size: 15px; line-height: 1.8; margin: 0 0 6px; }
 .dining-catalogue-actions { align-items: center; display: flex; justify-content: space-between; margin: 38px auto 0; max-width: 1280px; }
 
+/* Sofa collection */
+.sofa-collection-page { background: #eeeae4; }
+.sofa-hero {
+  background: #332f2c;
+  min-height: 100vh;
+  padding-right: 58vw;
+}
+.sofa-hero > img {
+  height: 100%;
+  left: auto;
+  object-fit: cover;
+  object-position: center 65%;
+  right: 0;
+  width: 57vw;
+}
+.sofa-hero .dining-hero-shade {
+  background: linear-gradient(90deg, rgba(30,27,25,.98) 0%, rgba(30,27,25,.88) 42%, rgba(30,27,25,.18) 70%, rgba(30,27,25,.08) 100%);
+}
+.sofa-feature-kyr .dining-feature-image img { object-position: center 68%; }
+.sofa-feature-emma .dining-feature-image img { object-position: center 48%; }
+.sofa-note h2 em { color: #8f705c; }
+.sofa-catalogue { background: #d6ccc2; }
+
 @media (max-width: 900px) {
   .collection-page-header { grid-template-columns: 1fr auto; padding: 24px 22px; }
   .collection-page-header nav { display: none; }
@@ -678,6 +701,12 @@ footer p:last-child { justify-self: end; }
   .dining-catalogue { padding: 92px 22px 82px; }
   .dining-catalogue-heading { align-items: start; gap: 28px; grid-template-columns: 1fr; margin-bottom: 45px; }
   .dining-catalogue-actions { align-items: flex-start; flex-direction: column-reverse; gap: 30px; }
+  .sofa-hero { min-height: 88vh; padding-right: 24px; }
+  .sofa-hero > img { left: 0; object-position: center 65%; width: 100%; }
+  .sofa-hero .dining-hero-shade {
+    background: linear-gradient(90deg, rgba(12,10,9,.72), rgba(12,10,9,.2) 82%), linear-gradient(0deg, rgba(8,7,6,.72), transparent 65%);
+  }
+  .sofa-feature-kyr .dining-feature-image img { object-position: center 68%; }
 }
 
 

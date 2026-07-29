@@ -82,7 +82,7 @@ export default function Home() {
           </article>
 
           <article className="collection-card">
-            <a className="collection-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="Sofa Collection" data-meta-category="Collection">
+            <a className="collection-link" href="/collections/sofa" data-meta-event="ViewContent" data-meta-content="Sofa Collection" data-meta-category="Collection">
               <div className="image-wrap">
                 <img src="/images/collection-sofa.webp" alt="TAAN HOME Kyr sofa" />
               </div>
