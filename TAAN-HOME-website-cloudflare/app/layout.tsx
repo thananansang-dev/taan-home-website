@@ -23,11 +23,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/taan-brand-icon-v2.svg", type: "image/svg+xml" },
-      { url: "/taan-brand-icon-v2.svg?v=2", type: "image/svg+xml" },
+      { url: "/icon.jpg?v=3", type: "image/jpeg", sizes: "2048x2048" },
     ],
-    shortcut: "/taan-brand-icon-v2.svg?v=2",
-    apple: "/taan-brand-icon-v2.svg?v=2",
+    shortcut: "/icon.jpg?v=3",
+    apple: "/apple-icon.jpg?v=3",
   },
   openGraph: {
     title: "TAAN HOME | Modern Luxury Furniture",
