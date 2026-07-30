@@ -104,10 +104,10 @@ export default function SofaCollectionPage() {
             apiUrl="/api/catalogue/sofa"
             catalogueName="TAAN Sofa Catalogue"
             fileName="TAAN-Sofa-Catalogue.pdf"
-            fileSizeBytes={130_013_911}
-            fileSizeLabel="130.01 MB"
+            fileSizeBytes={115_693_276}
+            fileSizeLabel="115.69 MB"
             pageCount={84}
-            viewUrl="https://catalogue.taanhome.com/TAAN%20Sofa%20catalog%20%281%29.pdf"
+            viewUrl="https://catalogue.taanhome.com/TAAN%20Sofa%20catalog%20%281%29.pdf?v=20260730-1447"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>

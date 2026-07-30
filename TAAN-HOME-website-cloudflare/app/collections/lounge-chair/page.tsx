@@ -87,10 +87,10 @@ export default function LoungeChairCollectionPage() {
             apiUrl="/api/catalogue/lounge-chair"
             catalogueName="TAAN Lounge Chair Catalogue"
             fileName="TAAN-Armchair-Catalogue.pdf"
-            fileSizeBytes={37_003_365}
-            fileSizeLabel="37.00 MB"
+            fileSizeBytes={33_798_082}
+            fileSizeLabel="33.80 MB"
             pageCount={54}
-            viewUrl="https://catalogue.taanhome.com/TAAN%20ARMCHAIR%20%281%29.pdf"
+            viewUrl="https://catalogue.taanhome.com/TAAN%20ARMCHAIR%20%281%29.pdf?v=20260730-1444"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
