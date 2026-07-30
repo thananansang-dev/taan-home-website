@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 
-type DownloadState = "idle" | "downloading" | "complete" | "error";
+type DownloadState =
+  | "idle"
+  | "downloading"
+  | "native"
+  | "complete"
+  | "error";
 
 type CatalogueDownloadProps = {
   apiUrl: string;
@@ -13,6 +18,14 @@ type CatalogueDownloadProps = {
   pageCount: number;
   viewUrl: string;
 };
+
+function usesSafariDownloadManager() {
+  const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const isIPadDesktopMode =
+    navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+
+  return isIOSDevice || isIPadDesktopMode;
+}
 
 export default function CatalogueDownload({
   apiUrl,
@@ -28,6 +41,23 @@ export default function CatalogueDownload({
 
   const downloadCatalogue = async () => {
     if (state === "downloading") return;
+
+    // Safari on iOS/iPadOS cannot reliably save a large blob URL after an
+    // asynchronous fetch. Start a same-origin attachment response while the
+    // user's tap is still active and let Safari's download manager stream it
+    // directly to Files instead.
+    if (usesSafariDownloadManager()) {
+      setProgress(0);
+      setState("native");
+
+      const link = document.createElement("a");
+      link.href = apiUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      return;
+    }
 
     setState("downloading");
     setProgress(0);
@@ -72,7 +102,9 @@ export default function CatalogueDownload({
   };
 
   const statusText =
-    state === "complete"
+    state === "native"
+      ? "Download started · Check Safari’s download icon"
+      : state === "complete"
       ? "Download complete"
       : state === "error"
         ? "Download interrupted"
@@ -101,7 +133,11 @@ export default function CatalogueDownload({
           data-meta-content={catalogueName}
           data-meta-category="Catalogue"
         >
-          {state === "downloading" ? `Downloading ${progress}%` : "Download PDF"}
+          {state === "downloading"
+            ? `Downloading ${progress}%`
+            : state === "native"
+              ? "Download started"
+              : "Download PDF"}
         </button>
       </div>
 
@@ -115,16 +151,18 @@ export default function CatalogueDownload({
               </a>
             )}
           </div>
-          <div
-            className="catalogue-progress-track"
-            role="progressbar"
-            aria-label={`${catalogueName} download progress`}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={state === "error" ? undefined : progress}
-          >
-            <span style={{ width: `${state === "error" ? 100 : progress}%` }} />
-          </div>
+          {state !== "native" && (
+            <div
+              className="catalogue-progress-track"
+              role="progressbar"
+              aria-label={`${catalogueName} download progress`}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={state === "error" ? undefined : progress}
+            >
+              <span style={{ width: `${state === "error" ? 100 : progress}%` }} />
+            </div>
+          )}
         </div>
       )}
     </div>
