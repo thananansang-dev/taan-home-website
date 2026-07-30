@@ -660,6 +660,30 @@ footer p:last-child { justify-self: end; }
 .dining-catalogue-heading { align-items: end; display: grid; gap: 8vw; grid-template-columns: 1fr 410px; margin: 0 auto 65px; max-width: 1280px; }
 .dining-catalogue-heading > p { color: rgba(25,24,21,.66); font-size: 15px; line-height: 1.8; margin: 0 0 6px; }
 .dining-catalogue-actions { align-items: center; display: flex; justify-content: space-between; margin: 38px auto 0; max-width: 1280px; }
+.catalogue-download-panel { display: grid; gap: 13px; min-width: min(100%, 520px); }
+.catalogue-file-meta {
+  color: rgba(25,24,21,.58); font-size: 9px; font-weight: 600; letter-spacing: .14em;
+  margin: 0; text-transform: uppercase;
+}
+.catalogue-download-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.catalogue-view-button { border: 1px solid rgba(25,24,21,.42); color: var(--ink); min-width: 190px; }
+.catalogue-view-button:hover { background: rgba(247,244,238,.44); }
+.catalogue-download-button {
+  border: 0; cursor: pointer; font-family: inherit; min-width: 190px;
+}
+.catalogue-download-button:disabled { cursor: wait; opacity: .72; }
+.catalogue-progress { display: grid; gap: 8px; max-width: 390px; }
+.catalogue-progress-copy { align-items: center; display: flex; justify-content: space-between; }
+.catalogue-progress-copy span, .catalogue-progress-copy a {
+  color: rgba(25,24,21,.68); font-size: 9px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.catalogue-progress-copy a { border-bottom: 1px solid rgba(25,24,21,.3); }
+.catalogue-progress-track { background: rgba(25,24,21,.16); height: 3px; overflow: hidden; width: 100%; }
+.catalogue-progress-track span {
+  background: var(--ink); display: block; height: 100%; transition: width 160ms ease;
+}
+.catalogue-progress.error .catalogue-progress-track span { background: #8c4037; }
 
 /* Sofa collection */
 .sofa-collection-page { background: #eeeae4; }
@@ -745,6 +769,10 @@ footer p:last-child { justify-self: end; }
   .dining-catalogue { padding: 92px 22px 82px; }
   .dining-catalogue-heading { align-items: start; gap: 28px; grid-template-columns: 1fr; margin-bottom: 45px; }
   .dining-catalogue-actions { align-items: flex-start; flex-direction: column-reverse; gap: 30px; }
+  .catalogue-download-panel { min-width: 100%; }
+  .catalogue-download-buttons { display: grid; width: 100%; }
+  .catalogue-download-buttons .button { width: 100%; }
+  .catalogue-progress { max-width: none; }
   .sofa-hero { min-height: 88vh; padding-right: 24px; }
   .sofa-hero > img { left: 0; object-position: center 65%; width: 100%; }
   .sofa-hero .dining-hero-shade {
