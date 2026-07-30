@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import CatalogueBook from "../../CatalogueBook";
+import CatalogueDownload from "../../CatalogueDownload";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const cataloguePdfUrl = "/catalogue/lounge-chair/taan-lounge-chair-catalogue.pdf";
 
 export const metadata: Metadata = {
   title: "Lounge Chair Collection | TAAN HOME",
@@ -83,7 +83,15 @@ export default function LoungeChairCollectionPage() {
           pageDirectory="/catalogue/lounge-chair/pages"
         />
         <div className="dining-catalogue-actions">
-          <a className="text-link dark-link" href={cataloguePdfUrl} download="TAAN-Lounge-Chair-Catalogue.pdf">Download lounge chair catalogue PDF</a>
+          <CatalogueDownload
+            apiUrl="/api/catalogue/lounge-chair"
+            catalogueName="TAAN Lounge Chair Catalogue"
+            fileName="TAAN-Armchair-Catalogue.pdf"
+            fileSizeBytes={37_003_365}
+            fileSizeLabel="37.00 MB"
+            pageCount={54}
+            viewUrl="https://catalogue.taanhome.com/TAAN%20ARMCHAIR%20%281%29.pdf"
+          />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
       </section>

@@ -2,13 +2,27 @@
 
 import { useState } from "react";
 
-const downloadUrl = "/api/catalogue/coffee-table";
-const fileName = "TAAN-Coffee-Table-Catalogue.pdf";
-const fileSizeBytes = 44_618_007;
-
 type DownloadState = "idle" | "downloading" | "complete" | "error";
 
-export default function CatalogueDownload() {
+type CatalogueDownloadProps = {
+  apiUrl: string;
+  catalogueName: string;
+  fileName: string;
+  fileSizeBytes: number;
+  fileSizeLabel: string;
+  pageCount: number;
+  viewUrl: string;
+};
+
+export default function CatalogueDownload({
+  apiUrl,
+  catalogueName,
+  fileName,
+  fileSizeBytes,
+  fileSizeLabel,
+  pageCount,
+  viewUrl,
+}: CatalogueDownloadProps) {
   const [state, setState] = useState<DownloadState>("idle");
   const [progress, setProgress] = useState(0);
 
@@ -19,7 +33,7 @@ export default function CatalogueDownload() {
     setProgress(0);
 
     try {
-      const response = await fetch(downloadUrl);
+      const response = await fetch(apiUrl);
       if (!response.ok || !response.body) {
         throw new Error("Catalogue download could not be started");
       }
@@ -66,11 +80,13 @@ export default function CatalogueDownload() {
 
   return (
     <div className="catalogue-download-panel">
-      <p className="catalogue-file-meta">PDF Catalogue · 58 pages · 44.62 MB</p>
+      <p className="catalogue-file-meta">
+        PDF Catalogue · {pageCount} pages · {fileSizeLabel}
+      </p>
       <div className="catalogue-download-buttons">
         <a
           className="button catalogue-view-button"
-          href="https://catalogue.taanhome.com/TAAN%20COFFEE%20TABLE%20CATALOG%20%282%29.pdf"
+          href={viewUrl}
           target="_blank"
           rel="noreferrer"
         >
@@ -82,7 +98,7 @@ export default function CatalogueDownload() {
           onClick={downloadCatalogue}
           disabled={state === "downloading"}
           data-meta-event="DownloadCatalogue"
-          data-meta-content="TAAN Coffee Table Catalogue"
+          data-meta-content={catalogueName}
           data-meta-category="Catalogue"
         >
           {state === "downloading" ? `Downloading ${progress}%` : "Download PDF"}
@@ -94,7 +110,7 @@ export default function CatalogueDownload() {
           <div className="catalogue-progress-copy">
             <span>{statusText}</span>
             {state === "error" && (
-              <a href={downloadUrl} download={fileName}>
+              <a href={apiUrl} download={fileName}>
                 Download without progress
               </a>
             )}
@@ -102,7 +118,7 @@ export default function CatalogueDownload() {
           <div
             className="catalogue-progress-track"
             role="progressbar"
-            aria-label="Catalogue download progress"
+            aria-label={`${catalogueName} download progress`}
             aria-valuemin={0}
             aria-valuemax={100}
             aria-valuenow={state === "error" ? undefined : progress}

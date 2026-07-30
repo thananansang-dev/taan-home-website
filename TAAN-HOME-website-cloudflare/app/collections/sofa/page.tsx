@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import CatalogueBook from "../../CatalogueBook";
+import CatalogueDownload from "../../CatalogueDownload";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const cataloguePdfUrl = "/catalogue/sofa/taan-sofa-catalogue.pdf";
 
 export const metadata: Metadata = {
   title: "Sofa Collection | TAAN HOME",
@@ -100,7 +100,15 @@ export default function SofaCollectionPage() {
           pageDirectory="/catalogue/sofa/pages"
         />
         <div className="dining-catalogue-actions">
-          <a className="text-link dark-link" href={cataloguePdfUrl} download="TAAN-Sofa-Catalogue.pdf">Download sofa catalogue PDF</a>
+          <CatalogueDownload
+            apiUrl="/api/catalogue/sofa"
+            catalogueName="TAAN Sofa Catalogue"
+            fileName="TAAN-Sofa-Catalogue.pdf"
+            fileSizeBytes={130_013_911}
+            fileSizeLabel="130.01 MB"
+            pageCount={84}
+            viewUrl="https://catalogue.taanhome.com/TAAN%20Sofa%20catalog%20%281%29.pdf"
+          />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
       </section>

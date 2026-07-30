@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CatalogueBook from "../../CatalogueBook";
-import CatalogueDownload from "./CatalogueDownload";
+import CatalogueDownload from "../../CatalogueDownload";
 
 const lineUrl = "https://lin.ee/t03g62O";
 
@@ -83,7 +83,15 @@ export default function CoffeeTableCollectionPage() {
           pageDirectory="/catalogue/coffee-table/pages"
         />
         <div className="dining-catalogue-actions">
-          <CatalogueDownload />
+          <CatalogueDownload
+            apiUrl="/api/catalogue/coffee-table"
+            catalogueName="TAAN Coffee Table Catalogue"
+            fileName="TAAN-Coffee-Table-Catalogue.pdf"
+            fileSizeBytes={44_618_007}
+            fileSizeLabel="44.62 MB"
+            pageCount={58}
+            viewUrl="https://catalogue.taanhome.com/TAAN%20COFFEE%20TABLE%20CATALOG%20%282%29.pdf"
+          />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
       </section>
