@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import CatalogueBook from "../../CatalogueBook";
+import CatalogueDownload from "./CatalogueDownload";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const cataloguePdfUrl =
-  "https://catalogue.taanhome.com/TAAN%20COFFEE%20TABLE%20CATALOG%20%282%29.pdf";
 
 export const metadata: Metadata = {
   title: "Coffee Table Collection | TAAN HOME",
@@ -84,7 +83,7 @@ export default function CoffeeTableCollectionPage() {
           pageDirectory="/catalogue/coffee-table/pages"
         />
         <div className="dining-catalogue-actions">
-          <a className="text-link dark-link" href={cataloguePdfUrl} download="TAAN-Coffee-Table-Catalogue.pdf">Download coffee table catalogue PDF</a>
+          <CatalogueDownload />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
       </section>
