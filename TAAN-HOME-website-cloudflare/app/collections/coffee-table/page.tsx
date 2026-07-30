@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import CatalogueBook from "../../CatalogueBook";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const cataloguePdfUrl = "/catalogue/coffee-table/taan-coffee-table-catalogue.pdf";
+const cataloguePdfUrl =
+  "https://catalogue.taanhome.com/TAAN%20COFFEE%20TABLE%20CATALOG%20%282%29.pdf";
 
 export const metadata: Metadata = {
   title: "Coffee Table Collection | TAAN HOME",
