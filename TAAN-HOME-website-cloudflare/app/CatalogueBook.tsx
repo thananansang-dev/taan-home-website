@@ -6,12 +6,14 @@ type CatalogueBookProps = {
   catalogueName?: string;
   pageCount?: number;
   pageDirectory?: string;
+  pdfUrl?: string;
 };
 
 export default function CatalogueBook({
   catalogueName = "TAAN Collection 2026",
   pageCount = 32,
   pageDirectory = "/catalogue/pages",
+  pdfUrl,
 }: CatalogueBookProps) {
   const [spread, setSpread] = useState(0);
   const [expanded, setExpanded] = useState(false);
@@ -27,8 +29,10 @@ export default function CatalogueBook({
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") previous();
-      if (event.key === "ArrowRight") next();
+      if (!pdfUrl) {
+        if (event.key === "ArrowLeft") previous();
+        if (event.key === "ArrowRight") next();
+      }
       if (event.key === "Escape") setExpanded(false);
     };
 
@@ -39,7 +43,27 @@ export default function CatalogueBook({
       window.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "";
     };
-  }, [expanded]);
+  }, [expanded, pdfUrl]);
+
+  const renderLivePdf = (fullScreen: boolean) => (
+    <div className="book-shell">
+      <iframe
+        src={`${pdfUrl}#view=FitH&toolbar=1&navpanes=0`}
+        title={`${catalogueName} live PDF catalogue`}
+        loading="eager"
+        style={{
+          background: "#f4f1ed",
+          border: 0,
+          boxShadow: "0 28px 65px rgba(33,22,18,.18)",
+          display: "block",
+          height: fullScreen ? "calc(100vh - 82px)" : "min(78vh, 900px)",
+          margin: "0 auto",
+          maxWidth: fullScreen ? "96vw" : "1180px",
+          width: "100%",
+        }}
+      />
+    </div>
+  );
 
   const renderBook = (openOnClick: boolean) => (
     <div
@@ -103,12 +127,12 @@ export default function CatalogueBook({
     <>
       <div className="catalogue-viewer">
         <div className="viewer-topline">
-          <p>Click the catalogue for full screen · use arrows or swipe to turn pages</p>
+          <p>{pdfUrl ? "Live PDF · scroll pages in real time" : "Click the catalogue for full screen · use arrows or swipe to turn pages"}</p>
           <button type="button" className="expand-book" onClick={() => setExpanded(true)} data-meta-event="ViewContent" data-meta-content={`${catalogueName} full screen`} data-meta-category="Catalogue">
             Open full screen
           </button>
         </div>
-        {renderBook(true)}
+        {pdfUrl ? renderLivePdf(false) : renderBook(true)}
       </div>
 
       {expanded && (
@@ -116,7 +140,7 @@ export default function CatalogueBook({
           <button type="button" className="close-book" onClick={() => setExpanded(false)} aria-label="Close full screen catalogue">
             Close ×
           </button>
-          {renderBook(false)}
+          {pdfUrl ? renderLivePdf(true) : renderBook(false)}
         </div>
       )}
     </>
