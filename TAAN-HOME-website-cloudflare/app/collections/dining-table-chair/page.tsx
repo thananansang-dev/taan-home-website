@@ -98,7 +98,7 @@ export default function DiningCollectionPage() {
         <CatalogueBook
           catalogueName="TAAN Dining Table & Chair"
           pageCount={71}
-          pdfUrl={diningCatalogueUrl}
+          pageDirectory="/catalogue/dining/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
