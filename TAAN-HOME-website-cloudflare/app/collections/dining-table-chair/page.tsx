@@ -3,6 +3,7 @@ import CatalogueBook from "../../CatalogueBook";
 import CatalogueDownload from "../../CatalogueDownload";
 
 const lineUrl = "https://lin.ee/t03g62O";
+const diningCatalogueUrl = "https://catalogue.taanhome.com/TAAN%20Dining%20table%20%26%20chair%20%281%29.pdf";
 
 export const metadata: Metadata = {
   title: "Dining Table & Chair Collection | TAAN HOME",
@@ -97,17 +98,17 @@ export default function DiningCollectionPage() {
         <CatalogueBook
           catalogueName="TAAN Dining Table & Chair"
           pageCount={71}
-          pageDirectory="/catalogue/dining/pages"
+          pdfUrl={diningCatalogueUrl}
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
             apiUrl="/api/catalogue/dining-table-chair"
             catalogueName="TAAN Dining Table & Chair Catalogue"
             fileName="TAAN-Dining-Table-and-Chair.pdf"
-            fileSizeBytes={80_830_020}
-            fileSizeLabel="80.83 MB"
+            fileSizeBytes={80_850_000}
+            fileSizeLabel="80.85 MB"
             pageCount={71}
-            viewUrl="https://catalogue.taanhome.com/TAAN%20Dining%20table%20%26%20chair.pdf"
+            viewUrl={diningCatalogueUrl}
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
