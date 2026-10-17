@@ -18,7 +18,6 @@ export default function Home() {
           TAAN <span>HOME</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#collection">Collection</a>
           <a href="#catalogue">Catalogue</a>
           <a href="#approach">Our approach</a>
           <a href="#showroom">Showroom</a>
@@ -43,80 +42,17 @@ export default function Home() {
             curated to bring lasting character to contemporary spaces.
           </p>
           <div className="hero-actions">
-            <a className="button button-light" href="#collection">
-              Explore the collection <Arrow />
+            <a className="button button-light" href="#catalogue" data-meta-event="ViewContent" data-meta-content="TAAN Collection 2026" data-meta-category="Catalogue">
+              Browse catalogue <Arrow />
             </a>
-            <a className="text-link light-link" href="#catalogue" data-meta-event="ViewContent" data-meta-content="TAAN Collection 2026" data-meta-category="Catalogue">
-              View catalogue
+            <a className="text-link light-link" href="#showroom">
+              Visit showroom
             </a>
           </div>
         </div>
-        <a className="scroll-cue" href="#collection" aria-label="Scroll to collection">
+        <a className="scroll-cue" href="#catalogue" aria-label="Scroll to catalogue">
           <span>Discover</span><i />
         </a>
-      </section>
-
-      <section className="collection section" id="collection">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">The collection</p>
-            <h2>Made to anchor<br />the room.</h2>
-          </div>
-          <p>
-            A considered edit of expressive silhouettes and tactile finishes,
-            designed for homes that feel composed rather than decorated.
-          </p>
-        </div>
-
-        <div className="collection-grid collection-grid-four">
-          <article className="collection-card">
-            <a className="collection-link" href="/collections/dining-table-chair" data-meta-event="ViewContent" data-meta-content="Dining table & Chair Collection" data-meta-category="Collection">
-              <div className="image-wrap">
-                <img src="/images/collection-dining.webp" alt="TAAN HOME dining table and chairs" />
-              </div>
-              <div className="card-meta">
-                <div><span>01</span><h3>Dining table &amp; Chair</h3></div>
-                <span className="card-arrow" aria-hidden="true"><Arrow /></span>
-              </div>
-            </a>
-          </article>
-
-          <article className="collection-card">
-            <a className="collection-link" href="/collections/sofa" data-meta-event="ViewContent" data-meta-content="Sofa Collection" data-meta-category="Collection">
-              <div className="image-wrap">
-                <img src="/images/collection-sofa.webp" alt="TAAN HOME Kyr sofa" />
-              </div>
-              <div className="card-meta">
-                <div><span>02</span><h3>Sofa</h3></div>
-                <span className="card-arrow" aria-hidden="true"><Arrow /></span>
-              </div>
-            </a>
-          </article>
-
-          <article className="collection-card">
-            <a className="collection-link" href="/collections/lounge-chair" data-meta-event="ViewContent" data-meta-content="Lounge Chair Collection" data-meta-category="Collection">
-              <div className="image-wrap">
-                <img src="/images/collection-lounge-chair.webp" alt="TAAN HOME Grid lounge chair" />
-              </div>
-              <div className="card-meta">
-                <div><span>03</span><h3>Lounge Chair</h3></div>
-                <span className="card-arrow" aria-hidden="true"><Arrow /></span>
-              </div>
-            </a>
-          </article>
-
-          <article className="collection-card">
-            <a className="collection-link" href="/collections/coffee-table" data-meta-event="ViewContent" data-meta-content="Coffee Table Collection" data-meta-category="Collection">
-              <div className="image-wrap">
-                <img src="/images/collection-coffee-table.webp" alt="TAAN HOME sculptural stone coffee table" />
-              </div>
-              <div className="card-meta">
-                <div><span>04</span><h3>Coffee Table</h3></div>
-                <span className="card-arrow" aria-hidden="true"><Arrow /></span>
-              </div>
-            </a>
-          </article>
-        </div>
       </section>
 
       <section className="catalogue" id="catalogue">
