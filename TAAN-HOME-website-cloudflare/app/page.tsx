@@ -1,6 +1,7 @@
-import CatalogueSelection from "./CatalogueSelection";
+import CatalogueBook from "./CatalogueBook";
 
 const lineUrl = "https://lin.ee/t03g62O";
+const catalogueUrl = "/catalogue/taan-home-collection-2026.pdf";
 const showroomMapUrl = "https://maps.app.goo.gl/AKYHx2qt7BXL9e7H6?g_st=ic";
 
 const Arrow = () => (
@@ -81,11 +82,14 @@ export default function Home() {
           <p className="eyebrow">TAAN Collection 2026</p>
           <h2>Explore the complete<br />collection.</h2>
           <p>
-            Discover the latest Sofa and Dining Table & Chairs catalogues.
-            Browse online or download a copy for your project.
+            Browse 32 pages of TAAN HOME furniture, materials and considered
+            forms in our online catalogue.
           </p>
         </div>
-        <CatalogueSelection />
+        <CatalogueBook />
+        <a className="text-link dark-link catalogue-download" href={catalogueUrl} download="TAAN-HOME-Collection-2026.pdf">
+          Download catalogue PDF
+        </a>
       </section>
 
       <section className="approach" id="approach">
