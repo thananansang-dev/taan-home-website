@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import CatalogueBook from "../CatalogueBook";
+import CatalogueSelection from "../CatalogueSelection";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const cataloguePdfUrl = "/catalogue/taan-home-collection-2026.pdf";
 
 export const metadata: Metadata = {
   title: "TAAN HOME Collection 2026 | Online Catalogue",
@@ -58,25 +57,15 @@ export default function CataloguePage() {
         <div>
           <h1>Explore the complete collection.</h1>
           <p>
-            Browse 32 pages of TAAN HOME furniture, materials and considered
-            forms. Use the arrows or swipe to turn the pages.
+            Explore our latest Sofa and Dining Table & Chairs catalogues.
+            Choose a collection to browse online or download its PDF.
           </p>
         </div>
       </section>
 
       <section className="catalogue-page-book" aria-label="TAAN HOME online catalogue">
-        <CatalogueBook />
+        <CatalogueSelection />
         <div className="catalogue-page-actions">
-          <a
-            className="text-link dark-link"
-            href={cataloguePdfUrl}
-            download="TAAN-HOME-Collection-2026.pdf"
-            data-meta-event="ViewContent"
-            data-meta-content="TAAN Collection 2026 PDF"
-            data-meta-category="Catalogue"
-          >
-            Download catalogue PDF
-          </a>
           <a
             className="button button-dark"
             href={lineUrl}

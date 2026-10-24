@@ -1,7 +1,6 @@
-import CatalogueBook from "./CatalogueBook";
+import CatalogueSelection from "./CatalogueSelection";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const catalogueUrl = "/catalogue/taan-home-collection-2026.pdf";
 const showroomMapUrl = "https://maps.app.goo.gl/AKYHx2qt7BXL9e7H6?g_st=ic";
 
 const Arrow = () => (
@@ -18,6 +17,7 @@ export default function Home() {
           TAAN <span>HOME</span>
         </a>
         <nav aria-label="Main navigation">
+          <a href="#collection">Collection</a>
           <a href="#catalogue">Catalogue</a>
           <a href="#approach">Our approach</a>
           <a href="#showroom">Showroom</a>
@@ -55,19 +55,37 @@ export default function Home() {
         </a>
       </section>
 
+      <section className="collection section" id="collection">
+        <div className="section-heading">
+          <div><p className="eyebrow">The collection</p><h2>Made for the way<br />you live.</h2></div>
+          <p>Explore our sofa and dining collections. Discover considered forms, inviting comfort and pieces that bring a room together.</p>
+        </div>
+        <div className="collection-grid collection-grid-four">
+          <article className="collection-card">
+            <a className="collection-link" href="/collections/sofa">
+              <div className="image-wrap"><img src="/images/collection-sofa.webp" alt="TAAN HOME sofa collection" loading="lazy" /></div>
+              <div className="card-meta"><div><span>01</span><h3>Sofa</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
+            </a>
+          </article>
+          <article className="collection-card">
+            <a className="collection-link" href="/collections/dining-table-chair">
+              <div className="image-wrap"><img src="/images/collection-dining.webp" alt="TAAN HOME dining table and chairs" loading="lazy" /></div>
+              <div className="card-meta"><div><span>02</span><h3>Dining Table &amp; Chairs</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
+            </a>
+          </article>
+        </div>
+      </section>
+
       <section className="catalogue" id="catalogue">
         <div className="catalogue-heading">
           <p className="eyebrow">TAAN Collection 2026</p>
           <h2>Explore the complete<br />collection.</h2>
           <p>
-            Browse 32 pages of TAAN HOME furniture, materials and considered
-            forms in our online catalogue.
+            Discover the latest Sofa and Dining Table & Chairs catalogues.
+            Browse online or download a copy for your project.
           </p>
         </div>
-        <CatalogueBook />
-        <a className="text-link dark-link catalogue-download" href={catalogueUrl} download="TAAN-HOME-Collection-2026.pdf">
-          Download catalogue PDF
-        </a>
+        <CatalogueSelection />
       </section>
 
       <section className="approach" id="approach">

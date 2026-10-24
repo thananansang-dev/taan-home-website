@@ -3,12 +3,12 @@ import CatalogueBook from "../../CatalogueBook";
 import CatalogueDownload from "../../CatalogueDownload";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const diningCatalogueUrl = "https://catalogue.taanhome.com/TAAN%20Dining%20table%20%26%20chair%20%281%29.pdf";
+const diningCatalogueUrl = "https://catalogue.taanhome.com/TAAN%20dining%20table%20%26%20chairs.pdf?v=20261024";
 
 export const metadata: Metadata = {
   title: "Dining Table & Chair Collection | TAAN HOME",
   description: "Discover the Duo Table and Velin Chair — sculptural dining pieces selected for refined, contemporary interiors.",
-  robots: { index: false, follow: false },
+  alternates: { canonical: "/collections/dining-table-chair" },
 };
 
 const Arrow = () => (
@@ -97,17 +97,17 @@ export default function DiningCollectionPage() {
         </div>
         <CatalogueBook
           catalogueName="TAAN Dining Table & Chair"
-          pageCount={71}
-          pageDirectory="/catalogue/dining/pages"
+          pageCount={15}
+          pageDirectory="/catalogue/dining/2026-10/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/dining-table-chair"
+            apiUrl="/api/catalogue/dining-table-chair?v=20261024"
             catalogueName="TAAN Dining Table & Chair Catalogue"
             fileName="TAAN-Dining-Table-and-Chair.pdf"
-            fileSizeBytes={80_850_000}
-            fileSizeLabel="80.85 MB"
-            pageCount={71}
+            fileSizeBytes={21342296}
+            fileSizeLabel="21.34 MB"
+            pageCount={15}
             viewUrl={diningCatalogueUrl}
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>

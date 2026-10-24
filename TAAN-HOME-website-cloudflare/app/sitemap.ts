@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://taanhome.com/collections/dining-table-chair",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://taanhome.com/collections/sofa",
       lastModified: new Date(),
       changeFrequency: "monthly",

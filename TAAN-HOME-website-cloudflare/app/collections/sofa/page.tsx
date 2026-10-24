@@ -7,7 +7,7 @@ const lineUrl = "https://lin.ee/t03g62O";
 export const metadata: Metadata = {
   title: "Sofa Collection | TAAN HOME",
   description: "Discover the Kyr and Emma sofas — refined modular seating selected for contemporary living.",
-  robots: { index: false, follow: false },
+  alternates: { canonical: "/collections/sofa" },
 };
 
 const Arrow = () => (
@@ -92,22 +92,22 @@ export default function SofaCollectionPage() {
       <section className="dining-catalogue sofa-catalogue" id="sofa-catalogue">
         <div className="dining-catalogue-heading">
           <div><p className="eyebrow">TAAN Sofa Collection</p><h2>Explore every<br />possibility.</h2></div>
-          <p>Browse all 81 pages of the dedicated TAAN Sofa Catalogue online, or download the PDF to keep as a reference for your project.</p>
+          <p>Browse all 18 pages of the dedicated TAAN Sofa Catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
         <CatalogueBook
           catalogueName="TAAN Sofa Collection"
-          pageCount={81}
-          pageDirectory="/catalogue/sofa/pages"
+          pageCount={18}
+          pageDirectory="/catalogue/sofa/2026-10/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/sofa"
+            apiUrl="/api/catalogue/sofa?v=20261024"
             catalogueName="TAAN Sofa Catalogue"
             fileName="TAAN-Sofa-Catalogue.pdf"
-            fileSizeBytes={115_693_276}
-            fileSizeLabel="115.69 MB"
-            pageCount={81}
-            viewUrl="https://catalogue.taanhome.com/TAAN%20Sofa%20catalog%20%281%29.pdf?v=20260730-1447"
+            fileSizeBytes={22696268}
+            fileSizeLabel="22.70 MB"
+            pageCount={18}
+            viewUrl="https://catalogue.taanhome.com/TAAN%20sofa.pdf?v=20261024"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>

@@ -820,3 +820,10 @@ footer p:last-child { justify-self: end; }
     grid-template-columns: 1fr;
   }
 }
+
+/* Current catalogue selection */
+.catalogue-selection { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; width: 100%; max-width: 1280px; margin: 0 auto; }
+.catalogue-selection article { border-top: 1px solid #b9afa5; padding: 32px 0; min-width: 0; }
+.catalogue-selection h3 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(26px, 2.6vw, 40px); margin: 0 0 28px; }
+.catalogue-selection .catalogue-download-panel { margin-top: 28px; }
+@media (max-width: 760px) { .catalogue-selection { grid-template-columns: 1fr; gap: 12px; } }
