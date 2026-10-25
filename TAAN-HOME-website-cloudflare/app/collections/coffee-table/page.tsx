@@ -7,7 +7,7 @@ const lineUrl = "https://lin.ee/t03g62O";
 export const metadata: Metadata = {
   title: "Coffee Table Collection | TAAN HOME",
   description: "Discover the Verve Coffee Table and browse the dedicated TAAN HOME Coffee Table Catalogue.",
-  robots: { index: false, follow: false },
+  alternates: { canonical: "/collections/coffee-table" },
 };
 
 const Arrow = () => (
@@ -75,22 +75,22 @@ export default function CoffeeTableCollectionPage() {
       <section className="dining-catalogue coffee-catalogue" id="coffee-catalogue">
         <div className="dining-catalogue-heading">
           <div><p className="eyebrow">TAAN Coffee Table Collection</p><h2>Explore the<br />complete edit.</h2></div>
-          <p>Browse all 57 pages of the dedicated TAAN Coffee Table Catalogue online, or download the PDF to keep as a reference for your project.</p>
+          <p>Browse all 15 pages of the dedicated TAAN Coffee Table Catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
         <CatalogueBook
           catalogueName="TAAN Coffee Table Collection"
-          pageCount={57}
-          pageDirectory="/catalogue/coffee-table/pages"
+          pageCount={15}
+          pageDirectory="/catalogue/coffee-table/2026-10-25/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/coffee-table"
+            apiUrl="/api/catalogue/coffee-table?v=20261025"
             catalogueName="TAAN Coffee Table Catalogue"
             fileName="TAAN-Coffee-Table-Catalogue.pdf"
-            fileSizeBytes={43_279_602}
-            fileSizeLabel="43.28 MB"
-            pageCount={57}
-            viewUrl="https://catalogue.taanhome.com/TAAN%20COFFEE%20TABLE%20CATALOG%20%282%29.pdf?v=20260818"
+            fileSizeBytes={14134267}
+            fileSizeLabel="14.13 MB"
+            pageCount={15}
+            viewUrl="https://catalogue.taanhome.com/TAANcoffeetable.pdf?v=20261025"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>

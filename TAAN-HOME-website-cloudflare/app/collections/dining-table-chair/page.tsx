@@ -3,7 +3,7 @@ import CatalogueBook from "../../CatalogueBook";
 import CatalogueDownload from "../../CatalogueDownload";
 
 const lineUrl = "https://lin.ee/t03g62O";
-const diningCatalogueUrl = "https://catalogue.taanhome.com/TAAN%20dining%20table%20%26%20chairs.pdf?v=20261024";
+const diningCatalogueUrl = "https://catalogue.taanhome.com/TAANdiningtable%26chairs.pdf?v=20261025";
 
 export const metadata: Metadata = {
   title: "Dining Table & Chair Collection | TAAN HOME",
@@ -93,21 +93,21 @@ export default function DiningCollectionPage() {
       <section className="dining-catalogue" id="dining-catalogue">
         <div className="dining-catalogue-heading">
           <div><p className="eyebrow">TAAN Collection 2026</p><h2>Discover the<br />full collection.</h2></div>
-          <p>Browse the complete TAAN HOME catalogue online, or download the PDF to keep as a reference for your project.</p>
+          <p>Browse all 30 pages of the TAAN Dining Table & Chairs catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
         <CatalogueBook
           catalogueName="TAAN Dining Table & Chair"
-          pageCount={15}
-          pageDirectory="/catalogue/dining/2026-10/pages"
+          pageCount={30}
+          pageDirectory="/catalogue/dining/2026-10-25/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/dining-table-chair?v=20261024"
+            apiUrl="/api/catalogue/dining-table-chair?v=20261025"
             catalogueName="TAAN Dining Table & Chair Catalogue"
             fileName="TAAN-Dining-Table-and-Chair.pdf"
-            fileSizeBytes={21342296}
-            fileSizeLabel="21.34 MB"
-            pageCount={15}
+            fileSizeBytes={42735285}
+            fileSizeLabel="42.74 MB"
+            pageCount={30}
             viewUrl={diningCatalogueUrl}
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>

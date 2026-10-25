@@ -59,7 +59,7 @@ export default function Home() {
       <section className="collection section" id="collection">
         <div className="section-heading">
           <div><p className="eyebrow">The collection</p><h2>Made for the way<br />you live.</h2></div>
-          <p>Explore our sofa and dining collections. Discover considered forms, inviting comfort and pieces that bring a room together.</p>
+          <p>Explore our sofa, dining and coffee table collections. Discover considered forms, inviting comfort and pieces that bring a room together.</p>
         </div>
         <div className="collection-grid collection-grid-four">
           <article className="collection-card">
@@ -72,6 +72,12 @@ export default function Home() {
             <a className="collection-link" href="/collections/dining-table-chair">
               <div className="image-wrap"><img src="/images/collection-dining.webp" alt="TAAN HOME dining table and chairs" loading="lazy" /></div>
               <div className="card-meta"><div><span>02</span><h3>Dining Table &amp; Chairs</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
+            </a>
+          </article>
+          <article className="collection-card">
+            <a className="collection-link" href="/collections/coffee-table">
+              <div className="image-wrap"><img src="/images/collection-coffee-table.webp" alt="TAAN HOME coffee table collection" loading="lazy" /></div>
+              <div className="card-meta"><div><span>03</span><h3>Coffee Table</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
             </a>
           </article>
         </div>
