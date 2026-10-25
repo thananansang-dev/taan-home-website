@@ -75,22 +75,22 @@ export default function CoffeeTableCollectionPage() {
       <section className="dining-catalogue coffee-catalogue" id="coffee-catalogue">
         <div className="dining-catalogue-heading">
           <div><p className="eyebrow">TAAN Coffee Table Collection</p><h2>Explore the<br />complete edit.</h2></div>
-          <p>Browse all 15 pages of the dedicated TAAN Coffee Table Catalogue online, or download the PDF to keep as a reference for your project.</p>
+          <p>Browse all 34 pages of the dedicated TAAN Coffee Table Catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
         <CatalogueBook
           catalogueName="TAAN Coffee Table Collection"
-          pageCount={15}
-          pageDirectory="/catalogue/coffee-table/2026-10-25/pages"
+          pageCount={34}
+          pageDirectory="/catalogue/coffee-table/2026-10-25-1653/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/coffee-table?v=20261025"
+            apiUrl="/api/catalogue/coffee-table?v=20261025-1653"
             catalogueName="TAAN Coffee Table Catalogue"
             fileName="TAAN-Coffee-Table-Catalogue.pdf"
-            fileSizeBytes={14134267}
-            fileSizeLabel="14.13 MB"
-            pageCount={15}
-            viewUrl="https://catalogue.taanhome.com/TAANcoffeetable.pdf?v=20261025"
+            fileSizeBytes={32388767}
+            fileSizeLabel="32.39 MB"
+            pageCount={34}
+            viewUrl="https://catalogue.taanhome.com/TAANcoffeetable.pdf?v=20261025-1653"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
