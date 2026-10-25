@@ -92,22 +92,22 @@ export default function SofaCollectionPage() {
       <section className="dining-catalogue sofa-catalogue" id="sofa-catalogue">
         <div className="dining-catalogue-heading">
           <div><p className="eyebrow">TAAN Sofa Collection</p><h2>Explore every<br />possibility.</h2></div>
-          <p>Browse all 18 pages of the dedicated TAAN Sofa Catalogue online, or download the PDF to keep as a reference for your project.</p>
+          <p>Browse all 40 pages of the dedicated TAAN Sofa Catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
         <CatalogueBook
           catalogueName="TAAN Sofa Collection"
-          pageCount={18}
-          pageDirectory="/catalogue/sofa/2026-10/pages"
+          pageCount={40}
+          pageDirectory="/catalogue/sofa/2026-10-25/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/sofa?v=20261024"
+            apiUrl="/api/catalogue/sofa?v=20261025"
             catalogueName="TAAN Sofa Catalogue"
             fileName="TAAN-Sofa-Catalogue.pdf"
-            fileSizeBytes={22696268}
-            fileSizeLabel="22.70 MB"
-            pageCount={18}
-            viewUrl="https://catalogue.taanhome.com/TAAN%20sofa.pdf?v=20261024"
+            fileSizeBytes={37911521}
+            fileSizeLabel="37.91 MB"
+            pageCount={40}
+            viewUrl="https://catalogue.taanhome.com/TAANsofa.pdf?v=20261025"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
