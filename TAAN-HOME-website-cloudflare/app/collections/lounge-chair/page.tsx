@@ -5,9 +5,9 @@ import CatalogueDownload from "../../CatalogueDownload";
 const lineUrl = "https://lin.ee/t03g62O";
 
 export const metadata: Metadata = {
-  title: "Lounge Chair Collection | TAAN HOME",
+  title: "Arm Chair Collection | TAAN HOME",
   description: "Discover the Teddy Lounge Chair and browse the dedicated TAAN HOME Lounge Chair Catalogue.",
-  robots: { index: false, follow: false },
+  alternates: { canonical: "/collections/lounge-chair" },
 };
 
 const Arrow = () => (
@@ -33,7 +33,7 @@ export default function LoungeChairCollectionPage() {
         <img src="/images/lounge-teddy.webp" alt="Teddy Lounge Chair in softly textured grey upholstery" />
         <div className="dining-hero-shade" />
         <div className="dining-hero-copy">
-          <p className="eyebrow light">TAAN HOME · Lounge Chair Collection</p>
+          <p className="eyebrow light">TAAN HOME · Arm Chair Collection</p>
           <h1>A quieter<br />place to sit.</h1>
           <p>Expressive silhouettes and enveloping comfort create a personal retreat within the room.</p>
           <a className="text-link light-link" href="#collection">Discover Teddy <Arrow /></a>
@@ -75,22 +75,22 @@ export default function LoungeChairCollectionPage() {
       <section className="dining-catalogue lounge-catalogue" id="lounge-catalogue">
         <div className="dining-catalogue-heading">
           <div><p className="eyebrow">TAAN Lounge Chair Collection</p><h2>Explore the<br />complete edit.</h2></div>
-          <p>Browse all 52 pages of the dedicated TAAN Lounge Chair Catalogue online, or download the PDF to keep as a reference for your project.</p>
+          <p>Browse all 8 pages of the dedicated TAAN Lounge Chair Catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
         <CatalogueBook
           catalogueName="TAAN Lounge Chair Collection"
-          pageCount={52}
-          pageDirectory="/catalogue/lounge-chair/pages"
+          pageCount={8}
+          pageDirectory="/catalogue/lounge-chair/2026-10-29/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/lounge-chair"
+            apiUrl="/api/catalogue/lounge-chair?v=20261029"
             catalogueName="TAAN Lounge Chair Catalogue"
             fileName="TAAN-Armchair-Catalogue.pdf"
-            fileSizeBytes={33_798_082}
-            fileSizeLabel="33.80 MB"
-            pageCount={52}
-            viewUrl="https://catalogue.taanhome.com/TAAN%20ARMCHAIR%20%281%29.pdf?v=20260730-1444"
+            fileSizeBytes={5064853}
+            fileSizeLabel="5.06 MB"
+            pageCount={8}
+            viewUrl="https://catalogue.taanhome.com/TAANarmchair.pdf?v=20261029"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
