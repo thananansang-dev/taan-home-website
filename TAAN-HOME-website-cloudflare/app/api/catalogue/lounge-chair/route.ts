@@ -3,7 +3,7 @@ import { proxyCatalogue } from "../proxyCatalogue";
 export async function GET(request: Request) {
   return proxyCatalogue(
     request,
-    "https://catalogue.taanhome.com/TAANarmchair.pdf?v=20261029",
+    "https://catalogue.taanhome.com/TAANarmchair.pdf?v=20261029-2205",
     "TAAN-Armchair-Catalogue.pdf",
   );
 }

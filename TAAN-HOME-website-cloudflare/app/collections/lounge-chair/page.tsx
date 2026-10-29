@@ -75,22 +75,22 @@ export default function LoungeChairCollectionPage() {
       <section className="dining-catalogue lounge-catalogue" id="lounge-catalogue">
         <div className="dining-catalogue-heading">
           <div><p className="eyebrow">TAAN Lounge Chair Collection</p><h2>Explore the<br />complete edit.</h2></div>
-          <p>Browse all 8 pages of the dedicated TAAN Lounge Chair Catalogue online, or download the PDF to keep as a reference for your project.</p>
+          <p>Browse all 17 pages of the dedicated TAAN Lounge Chair Catalogue online, or download the PDF to keep as a reference for your project.</p>
         </div>
         <CatalogueBook
           catalogueName="TAAN Lounge Chair Collection"
-          pageCount={8}
-          pageDirectory="/catalogue/lounge-chair/2026-10-29/pages"
+          pageCount={17}
+          pageDirectory="/catalogue/lounge-chair/2026-10-29-2205/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
-            apiUrl="/api/catalogue/lounge-chair?v=20261029"
+            apiUrl="/api/catalogue/lounge-chair?v=20261029-2205"
             catalogueName="TAAN Lounge Chair Catalogue"
             fileName="TAAN-Armchair-Catalogue.pdf"
-            fileSizeBytes={5064853}
-            fileSizeLabel="5.06 MB"
-            pageCount={8}
-            viewUrl="https://catalogue.taanhome.com/TAANarmchair.pdf?v=20261029"
+            fileSizeBytes={15697503}
+            fileSizeLabel="15.70 MB"
+            pageCount={17}
+            viewUrl="https://catalogue.taanhome.com/TAANarmchair.pdf?v=20261029-2205"
           />
           <a className="button button-dark" href={lineUrl} target="_blank" rel="noreferrer">Contact TAAN HOME <Arrow /></a>
         </div>
