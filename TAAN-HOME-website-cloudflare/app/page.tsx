@@ -38,9 +38,20 @@ export default function Home() {
         <div className="portfolio-hero-foot"><span>Furniture · Interior styling · Custom projects</span><a href="#story">Discover TAAN <span aria-hidden="true">↓</span></a></div>
       </section>
 
-      <section className="brand-story" id="story">
-        <div className="story-title"><p className="eyebrow">01 / The brand</p><h2>An interior designer’s<br /><em>perspective.</em></h2></div>
-        <div className="story-copy"><p>TAAN began with an interior designer’s search for furniture for client projects. That perspective still shapes our collection: timeless forms, thoughtful materials and pieces that feel at home.</p><p>We select and import contemporary furniture, with interior styling advice and custom furniture for individual homes and design projects.</p><a className="text-link dark-link" href="#approach">Our approach <Arrow /></a></div>
+      <section className="founder-story" id="story" aria-labelledby="founder-heading">
+        <div className="founder-intro" id="khun-c">
+          <p className="eyebrow">01 / Our origin</p>
+          <h2 id="founder-heading">An interior designer’s<br /><em>perspective.</em></h2>
+          <div className="founder-identity"><span className="founder-name">Khun C<span className="founder-dot">.</span></span><p>Interior designer<br />The person behind TAAN HOME</p></div>
+        </div>
+        <div className="founder-copy">
+          <p className="eyebrow">The story behind the selection</p>
+          <h3>It began with<br /><em>a search for the right piece.</em></h3>
+          <p>TAAN began with Khun C, an interior designer searching for furniture for client projects. That search shaped the brand: a focus on timeless form, material selection and the way furniture fits a real home.</p>
+          <p>Today, that perspective guides TAAN HOME’s contemporary furniture collection, alongside interior styling advice and custom furniture for individual homes and design projects.</p>
+          <div className="founder-principles" aria-label="TAAN design perspective"><span>Timeless form</span><span>Material selection</span><span>Life at home</span></div>
+          <a className="text-link dark-link" href="#approach">Explore the TAAN approach <Arrow /></a>
+        </div>
       </section>
 
       <section className="collection section" id="collection">
