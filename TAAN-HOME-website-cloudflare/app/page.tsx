@@ -1,3 +1,4 @@
+import "./home-portfolio.css";
 import CatalogueBook from "./CatalogueBook";
 
 const lineUrl = "https://lin.ee/t03g62O";
@@ -12,10 +13,10 @@ const Arrow = () => (
 
 export default function Home() {
   return (
-    <main>
+    <main className="portfolio-home">
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="TAAN HOME, back to top">
-          TAAN <span>HOME</span>
+          <img src="/images/portfolio/logo.png" alt="TAAN HOME" width="160" height="55" />
         </a>
         <nav aria-label="Main navigation">
           <a href="#collection">Collection</a>
@@ -28,38 +29,24 @@ export default function Home() {
         </a>
       </header>
 
-      <section className="hero" id="top">
-        <img
-          className="hero-image"
-          src="/images/taan-hero.webp"
-          alt="TAAN HOME cream sofa in a double-height modern living room"
-        />
-        <div className="hero-shade" />
-        <div className="hero-content">
-          <p className="eyebrow light">Modern furniture</p>
-          <h1>Timeless design<br />for modern living</h1>
-          <p className="hero-copy">
-            Sculptural furniture, refined materials and considered proportions—
-            curated to bring lasting character to contemporary spaces.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-light" href="#catalogue" data-meta-event="ViewContent" data-meta-content="TAAN Collection 2026" data-meta-category="Catalogue">
-              Browse catalogue <Arrow />
-            </a>
-            <a className="text-link light-link" href="#showroom">
-              Visit showroom
-            </a>
-          </div>
+      <section className="portfolio-hero" id="top">
+        <div className="portfolio-hero-heading">
+          <div><p className="eyebrow light">TAAN HOME · Collection 2026</p><h1>Timeless design.<br /><em>Modern living.</em></h1></div>
+          <div className="portfolio-hero-intro"><p>Furniture chosen with an interior designer’s eye.<br />For the spaces you call home.</p><a className="text-link light-link" href="#collection">Explore the collection <Arrow /></a></div>
         </div>
-        <a className="scroll-cue" href="#catalogue" aria-label="Scroll to catalogue">
-          <span>Discover</span><i />
-        </a>
+        <figure className="portfolio-cover"><img src="/images/portfolio/kyr.webp" alt="Kyr sofa in a bright interior visualisation" fetchPriority="high" /><figcaption><span>Kyr — a quieter silhouette</span><span>Render / interior visualisation</span></figcaption></figure>
+        <div className="portfolio-hero-foot"><span>Furniture · Interior styling · Custom projects</span><a href="#story">Discover TAAN <span aria-hidden="true">↓</span></a></div>
+      </section>
+
+      <section className="brand-story" id="story">
+        <div className="story-title"><p className="eyebrow">01 / The brand</p><h2>An interior designer’s<br /><em>perspective.</em></h2></div>
+        <div className="story-copy"><p>TAAN began with an interior designer’s search for furniture for client projects. That perspective still shapes our collection: timeless forms, thoughtful materials and pieces that feel at home.</p><p>We select and import contemporary furniture, with interior styling advice and custom furniture for individual homes and design projects.</p><a className="text-link dark-link" href="#approach">Our approach <Arrow /></a></div>
       </section>
 
       <section className="collection section" id="collection">
         <div className="section-heading">
-          <div><p className="eyebrow">The collection</p><h2>Made for the way<br />you live.</h2></div>
-          <p>Explore our sofa, dining, coffee table, arm chair, bed and cabinet & console collections. Discover considered forms, inviting comfort and pieces that bring a room together.</p>
+          <div><p className="eyebrow">02 / The collection</p><h2>A room,<br /><em>piece by piece.</em></h2></div>
+          <p>From a generous sofa to the finishing piece. Explore six collections, selected for the way they work together in your home.</p>
         </div>
         <div className="collection-grid collection-grid-four collection-grid-six">
           <article className="collection-card">
@@ -116,29 +103,23 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="approach" id="approach">
-        <div className="approach-copy">
-          <p className="eyebrow">The TAAN approach</p>
-          <h2>Designed with restraint.<br />Chosen with purpose.</h2>
-          <p>
-            From a quiet reading corner to a statement dining room, our team
-            helps you bring proportion, material and comfort into balance.
-          </p>
-        </div>
-        <div className="service-list" aria-label="Our services">
-          <div><span>01</span><p>Furniture selection for your space</p></div>
-          <div><span>02</span><p>Material and finish guidance</p></div>
-          <div><span>03</span><p>Residential and commercial projects</p></div>
-        </div>
+      <section className="material-story" id="approach">
+        <div className="material-photo"><img src="/images/portfolio/material.webp" alt="Close-up of TAAN sofa upholstery and cushion detail" loading="lazy" /></div>
+        <div className="material-copy"><p className="eyebrow">03 / The TAAN approach</p><h2>Colour. Texture.<br /><em>Proportion.</em></h2><p>A more personal selection begins with your space. We consider the room, its light and the way you live.</p><div className="portfolio-services"><div><span>01</span><h3>Selected furniture</h3><p>Contemporary pieces with an enduring design perspective.</p></div><div><span>02</span><h3>Interior styling</h3><p>Advice on furniture size, layout and colour, considered alongside your architecture.</p></div><div><span>03</span><h3>Custom furniture &amp; projects</h3><p>Discuss your brief, dimensions and finishes with our team.</p></div></div><a className="text-link dark-link" href={lineUrl} target="_blank" rel="noreferrer" data-meta-event="Contact" data-meta-content="Project consultation" data-meta-category="LINE enquiry">Discuss your space <Arrow /></a></div>
+      </section>
+      <section className="client-homes">
+        <div className="section-heading"><div><p className="eyebrow">04 / At home</p><h2>In its own<br /><em>setting.</em></h2></div><p>A glimpse of TAAN furniture in our clients’ homes.<br />Different rooms. A personal point of view.</p></div>
+        <div className="client-grid">{[{image:"client-sofa",title:"A place to gather",label:"Living"},{image:"client-dining",title:"Around the table",label:"Dining"},{image:"client-chair",title:"A corner to settle into",label:"Lounge"}].map(item=><figure key={item.image}><img src={`/images/portfolio/${item.image}.webp`} alt={`${item.label} furniture in a TAAN client's home`} loading="lazy" /><figcaption><span>{item.label}</span><h3>{item.title}</h3></figcaption></figure>)}</div><p className="photo-note">Client-home photography · TAAN HOME</p>
       </section>
 
       <section className="showroom" id="showroom">
+        <img className="portfolio-showroom-image" src="/images/portfolio/showroom.webp" alt="Inside the TAAN HOME showroom" loading="lazy" />
         <div>
-          <p className="eyebrow light">TAAN HOME · Bangkok</p>
-          <h2>See it. Sit with it.<br />Make it yours.</h2>
+          <p className="eyebrow light">05 / Ratchaphruek, Nonthaburi</p>
+          <h2>See it.<br /><em>Sit with it.</em></h2>
         </div>
         <div className="showroom-action">
-          <p>Experience the materials, comfort and scale in person with a private showroom consultation.</p>
+          <p>Explore the materials, comfort and scale in person. Showroom visits by appointment.</p>
           <div className="showroom-buttons">
             <a className="button button-light" href={showroomMapUrl} target="_blank" rel="noreferrer" data-meta-event="ShowroomDirections" data-meta-content="Showroom directions" data-meta-category="Showroom">
               Get directions <Arrow />
@@ -162,8 +143,8 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="wordmark footer-mark" href="#top">TAAN <span>HOME</span></a>
-        <p>Modern furniture for considered living.</p>
+        <a className="wordmark footer-mark" href="#top"><img src="/images/portfolio/logo.png" alt="TAAN HOME" width="160" height="55" /></a>
+        <p>Timeless Art and Noble Co., Ltd.</p>
         <p>© {new Date().getFullYear()} TAAN HOME</p>
       </footer>
 
