@@ -59,9 +59,9 @@ export default function Home() {
       <section className="collection section" id="collection">
         <div className="section-heading">
           <div><p className="eyebrow">The collection</p><h2>Made for the way<br />you live.</h2></div>
-          <p>Explore our sofa, dining, coffee table and arm chair collections. Discover considered forms, inviting comfort and pieces that bring a room together.</p>
+          <p>Explore our sofa, dining, coffee table, arm chair, bed and cabinet & console collections. Discover considered forms, inviting comfort and pieces that bring a room together.</p>
         </div>
-        <div className="collection-grid collection-grid-four">
+        <div className="collection-grid collection-grid-four collection-grid-six">
           <article className="collection-card">
             <a className="collection-link" href="/collections/sofa">
               <div className="image-wrap"><img src="/images/collection-sofa.webp" alt="TAAN HOME sofa collection" loading="lazy" /></div>
@@ -84,6 +84,18 @@ export default function Home() {
             <a className="collection-link" href="/collections/lounge-chair">
               <div className="image-wrap"><img src="/images/lounge-teddy.webp" alt="TAAN HOME Arm Chair collection" loading="lazy" /></div>
               <div className="card-meta"><div><span>04</span><h3>Arm Chair</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
+            </a>
+          </article>
+          <article className="collection-card">
+            <a className="collection-link" href="/collections/bed">
+              <div className="image-wrap"><img src="/images/collection-bed.webp" alt="TAAN HOME Bed collection" loading="lazy" /></div>
+              <div className="card-meta"><div><span>05</span><h3>Bed</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
+            </a>
+          </article>
+          <article className="collection-card">
+            <a className="collection-link" href="/collections/cabinet-console">
+              <div className="image-wrap"><img src="/images/collection-cabinet.webp" alt="TAAN HOME Cabinet & Console collection" loading="lazy" /></div>
+              <div className="card-meta"><div><span>06</span><h3>Cabinet & Console</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
             </a>
           </article>
         </div>

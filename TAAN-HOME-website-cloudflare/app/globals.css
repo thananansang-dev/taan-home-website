@@ -820,3 +820,31 @@ footer p:last-child { justify-self: end; }
     grid-template-columns: 1fr;
   }
 }
+
+/* Bed and cabinet collections */
+.collection-grid-six { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 48px; }
+.new-collection-hero { display: grid; grid-template-columns: .9fr 1.1fr; background: #e9e3da; min-height: 660px; }
+.new-collection-intro { padding: 100px 5vw 72px 6vw; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.new-collection-intro h1 { font-family: var(--font-display), Georgia, serif; font-size: clamp(58px, 6.3vw, 94px); font-weight: 400; letter-spacing: -.045em; line-height: 1.03; margin: 24px 0; }
+.new-collection-intro > p:not(.eyebrow) { max-width: 420px; line-height: 1.9; color: #625c54; margin: 0 0 32px; }
+.new-collection-index { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; margin-top: 50px; color: #72695e; }
+.new-collection-photo { position: relative; min-height: 560px; overflow: hidden; }
+.new-collection-photo img { width: 100%; height: 100%; object-fit: cover; }
+.new-collection-photo > span { position: absolute; bottom: 24px; left: 28px; color: white; font-size: 11px; letter-spacing: .17em; text-transform: uppercase; background: #292620aa; padding: 10px 14px; }
+.cabinet-console-collection-page .new-collection-hero { background: #e1dfd4; }
+.new-collection-catalogue { background: #dcd4c8; }
+.new-collection-next { padding: 80px 6vw; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.new-collection-next > a:not(.text-link) { font-family: Georgia, serif; font-size: clamp(32px, 4vw, 58px); display: flex; gap: 30px; align-items: center; }
+.new-collection-next .arrow-icon { width: 32px; height: 32px; }
+@media (max-width: 1000px) { .collection-grid-six { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) {
+ .collection-grid-six { grid-template-columns: 1fr; gap: 32px; }
+ .new-collection-hero { grid-template-columns: 1fr; }
+ .new-collection-intro { padding: 64px 24px 48px; }
+ .new-collection-intro h1 { font-size: clamp(54px, 12vw, 78px); }
+ .new-collection-photo { min-height: 0; aspect-ratio: 1.15; }
+ .new-collection-index { margin-top: 32px; }
+ .new-collection-next { padding: 64px 24px; }
+}
+.new-collection-page .collection-page-header { position: relative; background: #f4f1eb; color: var(--ink); }
+.new-collection-page .collection-page-header .header-cta { color: var(--ink); border-color: #19181566; }
