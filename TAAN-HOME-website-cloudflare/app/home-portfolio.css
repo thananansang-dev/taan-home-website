@@ -41,3 +41,7 @@
 .founder-intro{display:flex;flex-direction:column;align-items:flex-start}.founder-identity{margin-top:65px;padding-top:30px;border-top:1px solid #2f120226;width:100%}.founder-name{font-family:Baskerville,Georgia,serif;font-size:clamp(70px,8vw,120px);line-height:1;letter-spacing:-.055em}.founder-dot{color:#94602e}.founder-identity p{font-size:11px;line-height:1.8;color:#725e50;letter-spacing:.06em;margin:18px 0 0}.founder-copy{padding-top:5px}.founder-copy h3{font-size:clamp(30px,3vw,45px);line-height:1.15;letter-spacing:-.025em;margin:0 0 30px}.founder-copy>p:not(.eyebrow){font-size:14px;line-height:1.95;color:#725e50;margin:0 0 22px;max-width:510px}.founder-principles{display:flex;flex-wrap:wrap;gap:12px 20px;border-top:1px solid #2f120226;padding-top:22px;margin:30px 0;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#94602e}
 @media(max-width:900px){.founder-story{gap:40px;padding:75px 6vw}.founder-identity{margin-top:40px}}
 @media(max-width:600px){.founder-story{grid-template-columns:1fr;gap:45px;padding:65px 6vw}.founder-identity{margin-top:30px;padding-top:24px}.founder-name{font-size:76px}.founder-copy h3{font-size:34px}.founder-principles{font-size:8px;gap:12px 16px}}
+
+/* Preserve the full composition of client delivery photographs. */
+.client-grid img { aspect-ratio:2/3; height:auto; object-fit:contain; }
+@media(max-width:600px){.client-grid img{aspect-ratio:2/3;}}
