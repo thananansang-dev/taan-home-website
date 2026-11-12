@@ -9,5 +9,13 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "ANALYTICS_DB",
+      "database_name": "taan-analytics",
+      "database_id": "ccc7e4f9-6497-4630-95cd-c846d52506fa",
+      "migrations_dir": "migrations/analytics"
+    }
+  ]
 }

@@ -1,0 +1,9 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import fs from 'node:fs';
+const code=fs.readFileSync(new URL('../worker/analytics-tracker.js',import.meta.url),'utf8');
+function visit(url,referrer,storage,accepted=true){const sent=[],handlers={};const context={location:new URL(url),URL,crypto,localStorage:{getItem:()=>accepted?'accepted':'declined'},sessionStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},navigator:{},document:{referrer,addEventListener:()=>{}},window:{addEventListener:(n,fn)=>handlers[n]=fn},history:{pushState:()=>{}},fetch:(_u,o)=>{sent.push(JSON.parse(o.body));return Promise.resolve();}};vm.runInNewContext(code,context);return {sent,handlers};}
+test('first source survives internal full-page navigation',()=>{const storage=new Map();const a=visit('https://taanhome.com/?utm_source=instagram&utm_medium=bio&utm_campaign=profile','https://l.instagram.com/',storage);assert.equal(a.sent[0].utm_source,'instagram');const b=visit('https://taanhome.com/collections/sofa','https://taanhome.com/',storage);assert.equal(b.sent[0].utm_source,'instagram');assert.equal(b.sent[0].referrer,'l.instagram.com');assert.equal(b.sent[0].session,a.sent[0].session);});
+test('declined consent neither stores nor sends attribution',()=>{const storage=new Map();const a=visit('https://taanhome.com/?utm_source=line','',storage,false);assert.equal(a.sent.length,0);assert.equal(storage.size,0);});
+test('unrelated URL parameters and click IDs are not collected',()=>{const a=visit('https://taanhome.com/?utm_source=facebook&fbclid=secret&email=private','',new Map());assert.equal(a.sent[0].utm_source,'facebook');assert.equal(JSON.stringify(a.sent).includes('secret'),false);assert.equal(JSON.stringify(a.sent).includes('private'),false);});
