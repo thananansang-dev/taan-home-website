@@ -30,7 +30,7 @@ export default function SofaCollectionPage() {
       </header>
 
       <section className="dining-hero sofa-hero">
-        <img src="/images/sofa-kyr.webp" alt="Kyr Sofa in a warm double-height living room" />
+        <img src="/images/kyr-showroom-20261112.jpg" alt="Kyr Sofa photographed at the TAAN HOME showroom" />
         <div className="dining-hero-shade" />
         <div className="dining-hero-copy">
           <p className="eyebrow light">TAAN HOME · Sofa Collection</p>
@@ -50,7 +50,7 @@ export default function SofaCollectionPage() {
 
       <section className="dining-feature dining-feature-duo sofa-feature-kyr">
         <div className="dining-feature-image">
-          <img src="/images/sofa-kyr.webp" alt="Kyr Sofa with a timber platform base and softly rounded upholstery" />
+          <img src="/images/kyr-showroom-20261112.jpg" alt="Overhead view of the Kyr Sofa at the TAAN HOME showroom" />
           <span>01 — Modular Sofa</span>
         </div>
         <div className="dining-feature-copy">

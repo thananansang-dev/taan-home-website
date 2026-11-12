@@ -62,7 +62,7 @@ export default function Home() {
         <div className="collection-grid collection-grid-four collection-grid-six">
           <article className="collection-card">
             <a className="collection-link" href="/collections/sofa">
-              <div className="image-wrap"><img src="/images/collection-sofa.webp" alt="TAAN HOME sofa collection" loading="lazy" /></div>
+              <div className="image-wrap"><img src="/images/kyr-showroom-20261112.jpg" alt="TAAN HOME sofa collection" loading="lazy" /></div>
               <div className="card-meta"><div><span>01</span><h3>Sofa</h3></div><span className="card-arrow" aria-hidden="true"><Arrow /></span></div>
             </a>
           </article>
