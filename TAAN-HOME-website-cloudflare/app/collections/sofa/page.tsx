@@ -97,7 +97,7 @@ export default function SofaCollectionPage() {
         <CatalogueBook
           catalogueName="TAAN Sofa Collection"
           pageCount={53}
-          pdfUrl="https://catalogue.taanhome.com/TAANsofa2026.pdf?v=20261111"
+          pageDirectory="/catalogue/sofa/2026-11-11/pages"
         />
         <div className="dining-catalogue-actions">
           <CatalogueDownload
