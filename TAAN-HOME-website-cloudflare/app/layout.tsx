@@ -54,6 +54,7 @@ export default function RootLayout({
       >
         {children}
         <MetaPixel />
+        <script src="/analytics.js" defer></script>
         <script
         type="module"
         src="https://static.cloudflareinsights.com/beacon.min.js"

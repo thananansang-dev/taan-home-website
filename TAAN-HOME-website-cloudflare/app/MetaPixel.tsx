@@ -183,6 +183,7 @@ export default function MetaPixel() {
   const choose = (value: "accepted" | "declined") => {
     window.localStorage.setItem(consentKey, value);
     setConsent(value);
+    window.dispatchEvent(new Event("taan-consent-change"));
     if (value === "accepted") loadPixel();
   };
 
@@ -194,7 +195,7 @@ export default function MetaPixel() {
       {consent === null && (
         <aside className="cookie-consent" aria-label="Marketing cookie preferences">
           <p>
-            We use Meta tracking to understand visits and enquiries and improve
+            We use website analytics and Meta tracking to understand page visits, clicks and enquiries and improve
             our advertising. You can accept or decline marketing cookies.
           </p>
           <div>
