@@ -10,7 +10,7 @@ Not live until the configuration below is complete. No historical backfill.
 ```
 Preserve all existing bindings.
 3. Run `npx wrangler d1 migrations apply taan-analytics --remote`.
-4. Run `npx wrangler secret put ANALYTICS_ADMIN_PASSWORD` and enter a random ASCII password of at least 20 characters. Never commit the password.
+4. Run `npx wrangler secret put ANALYTICS_ADMIN_PASSWORD` and enter a random ASCII password of at least 8 characters containing both an English letter and a digit (ASCII symbols are optional; no spaces). Never commit the password.
 5. Deploy using the existing Cloudflare build/deploy workflow. Add a Cloudflare rate limiting rule for POST /api/analytics/event (for example 120 requests/minute/IP, adjusted for shared networks).
 6. Accept cookies on the website, visit a collection and click LINE. Sign in to /admin/analytics and verify pageviews and click destinations. Decline cookies and verify that no /api/analytics/event requests are sent.
 
@@ -31,3 +31,4 @@ Use campaign identifiers only; never put customer names, emails or phone numbers
 
 ## Current deployment setup
 On 2026-11-12 the taan-analytics D1 database was created and the combined 0001 + 0002 schema was applied through the Cloudflare console. Do not replay 0002 on this existing database. The committed binding points to this database. The admin secret must be entered by the owner in Cloudflare Worker Settings → Variables and Secrets.
+

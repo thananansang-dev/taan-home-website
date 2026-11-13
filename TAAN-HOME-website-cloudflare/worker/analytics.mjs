@@ -17,8 +17,11 @@ export function channelFor(source = '', referrer = '') {
  if(domain('youtube.com') || domain('youtu.be'))return 'YouTube';
  return host ? 'เว็บไซต์อื่น' : 'เข้าตรง / ไม่ทราบ';
 }
+function validAdminPassword(value) {
+ return typeof value === 'string' && value.length >= 8 && /^[\x21-\x7e]+$/.test(value) && /[a-zA-Z]/.test(value) && /[0-9]/.test(value);
+}
 async function authorized(request, env) {
- if (!env.ANALYTICS_ADMIN_PASSWORD || env.ANALYTICS_ADMIN_PASSWORD.length < 20) return false;
+ if (!validAdminPassword(env.ANALYTICS_ADMIN_PASSWORD)) return false;
  const expected = 'Basic ' + btoa('admin:' + env.ANALYTICS_ADMIN_PASSWORD);
  const hash = async value => new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value)));
  const [a,b] = await Promise.all([hash(request.headers.get('Authorization') || ''),hash(expected)]);
@@ -32,7 +35,7 @@ export async function analytics(request, env) {
  const event = url.pathname === '/api/analytics/event';
  if (!admin && !report && !event) return null;
  if (admin || report) {
-  if (!env.ANALYTICS_ADMIN_PASSWORD || env.ANALYTICS_ADMIN_PASSWORD.length < 20) return new Response('Analytics admin is not configured.',{status:503,headers});
+  if (!validAdminPassword(env.ANALYTICS_ADMIN_PASSWORD)) return new Response('Analytics admin is not configured.',{status:503,headers});
   if (!await authorized(request,env)) return new Response('Authentication required',{status:401,headers:{...headers,'WWW-Authenticate':'Basic realm="TAAN HOME Analytics", charset="UTF-8"'}});
   if (request.method !== 'GET') return json({error:'Method not allowed'},405);
   if (admin) return new Response(dashboard,{headers:{...headers,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"}});
@@ -79,4 +82,5 @@ export async function analytics(request, env) {
   return json({summary:data[0].results[0],pages:data[1].results,clicks:data[2].results,sources:data[3].results,campaigns:data[4].results,daily:data[5].results});
  } catch { return json({error:'Analytics database requires migration'},503); }
 }
+
 

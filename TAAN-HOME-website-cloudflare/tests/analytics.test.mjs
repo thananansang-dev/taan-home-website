@@ -24,3 +24,20 @@ test('invalid report range is rejected',async()=>assert.equal((await analytics(n
 test('UTM takes precedence and supported referrers classify correctly',()=>{assert.equal(channelFor('instagram','l.facebook.com'),'Instagram');assert.equal(channelFor('','l.facebook.com'),'Facebook');assert.equal(channelFor('','www.google.co.th'),'Google');assert.equal(channelFor('line',''),'LINE');assert.equal(channelFor('',''),'เข้าตรง / ไม่ทราบ');assert.equal(channelFor('','fakefacebook.com'),'เว็บไซต์อื่น');assert.equal(channelFor('partner','google.com'),'UTM / อื่น ๆ');});
 test('oversized and non-string campaign tags are rejected',async()=>{for(const value of ['x'.repeat(101),{},'email@example.com'])assert.equal((await analytics(event({...payload,utm_campaign:value}),{ANALYTICS_DB:db})).status,400);});
 test('channel and campaign are persisted',async()=>{let values;const database={prepare:()=>({bind:(...v)=>{if(v.length===11)values=v;return {run:async()=>({success:true})};}})};await analytics(event({...payload,utm_source:'Instagram',utm_medium:'paid_social',utm_campaign:'sofa_nov'}),{ANALYTICS_DB:database});assert.deepEqual(values.slice(7),['Instagram','instagram','paid_social','sofa_nov']);});
+
+test('accepts eight-character letter and number passwords',async()=>{
+ for(const value of ['Abcd1234','Abcd1234!']){
+  const r=await analytics(new Request(origin+'/admin/analytics',{headers:{Authorization:'Basic '+btoa('admin:'+value)}}),{ANALYTICS_ADMIN_PASSWORD:value});
+  assert.equal(r.status,200);
+ }
+});
+test('rejects short or non-mixed configured passwords',async()=>{
+ for(const value of ['Abc1234','abcdefgh','12345678','Abcd 123']){
+  assert.equal((await analytics(new Request(origin+'/admin/analytics'),{ANALYTICS_ADMIN_PASSWORD:value})).status,503);
+ }
+});
+test('eight-character password still rejects wrong credentials',async()=>{
+ const r=await analytics(new Request(origin+'/admin/analytics',{headers:{Authorization:'Basic '+btoa('admin:Wrong123')}}),{ANALYTICS_ADMIN_PASSWORD:'Abcd1234'});
+ assert.equal(r.status,401);
+});
+
